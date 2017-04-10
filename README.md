@@ -1,4 +1,8 @@
-## VFPDosPrint Quick Guide
+# VFPDosPrint
+Generate text-based reports that can take full advantage of dot-matrix printer capabilities
+ 
+ 
+## Quick Guide
 _(for more detailed help, see file **dosprinten.chm** included in the release package)_ 
 
 The fastest way to start using **VFPDosPrint** is using format files. All you will need is:
