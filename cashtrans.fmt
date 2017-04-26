@@ -1,0 +1,148 @@
+# CASHTRANS.FMT
+# Cash transactions report. This an example of a medium-complex report using nested grouping
+# section's commands and properties and nested reports.
+#
+
+#
+# Report configuration
+#
+<config>
+StartConfigString=$C10$$COFF$
+PaperLenght=60   
+TopMargin=0
+LeftMargin=2
+EjectBeforeSummary=True
+PrintHeaderOnSummary=True
+ShowRunProgress=True
+RunProgressMessage="Printing...(%PageCnt%)"
+SendToFile=True
+FileName="cashtrans.out"
+</config>
+
+#
+# Init event. Gets the dataset to be used in the report
+#
+<init>
+ select * ;
+   from cashtrans ;
+  order by posid,date ;
+   into cursor qCashtrans
+</init>
+
+
+#
+# Macro declaration
+#
+<macros>
+XTAMOUNT=TRANS(_SUM[amount;posid],"999,999,999.99")
+XMIN=TRANS(_MIN[amount;posid;amount],"999,999,999.99")
+XMAX=TRANS(_MAX[amount;posid],"999,999,999.99")
+XCOUNT=TRANS(_COUNT[posid],"99,999,999,999")
+</macros>
+
+
+#
+# Control groups declaration. G1 will break for each POS ID, while G2 will break
+#
+<groups>
+G1=posid | G1HDR | G1FTR
+G2=MONTH(date) | G2HDR | G2FTR
+</groups>
+
+#
+# Page headers. <heaader1> is used on all pages but the summary page. DPCurSection is
+# an automatic variable that contains the type of the section being printed. <header2>
+# will be used ONLY when printing the SUMMARY band.
+#
+<header1 type=header ApplyIf=(DPCurSection<>"SUMMARY")>
+XYZ Bookstore                                           CASH TRANSACTIONS REPORT
+Caracas, Venezuela
+
+DATE       TYPE CONCEPT                DOCUMENT        REFERENCE          AMOUNT
+========== ==== ====================== =============== ========== ==============
+</header1>
+
+<header2 type=header ApplyIf=(DPCurSection="SUMMARY")>
+XYZ Bookstore                                           CASH TRANSACTIONS REPORT
+Caracas, Venezuela
+
+</header2>
+
+
+
+#
+# G1 header
+#
+<g1hdr PrintOnNewPage=Yes>
+
+$BON$POS ID: %posid%$BOFF$
+
+--------------------------------------------------------------------------------
+</g1hdr>
+
+#
+# G2 header
+#
+<g2hdr>
+</g2hdr>
+
+
+#
+# Detail band
+#
+<detail>
+[date    ] [XT] [concept             ] [document     ] [XREF    ] [XAMOUNT     ]
+#set XT=type
+#set XREF=reference
+#set XAMOUNT=TRANS(amount,"999,999,999.99")
+</detail>
+
+
+#
+# G2 footer
+#
+<g2ftr>
+
+</g2ftr>
+
+
+#
+# G1 footer. G1 is a automatic variable that represents 
+# the current value of G1 control group.
+#
+<g1ftr IntegralHeight=True>
+--------------------------------------------------------------------------------
+                                        ** POS TOTAL ([G1 ]) **   [XTAMOUNT    ]
+                                        ** MIN AMOUNT **          [XMIN        ]
+                                        ** MAX AMOUNT **          [XMAX        ]
+                                        ** TRANSACTION COUNT **   [XCOUNT      ]
+--------------------------------------------------------------------------------
+</g1ftr>
+
+
+#
+# Page footer
+#
+<footer>
+
+
+[datetime           ]                                                  %pageno% of %pagecnt%
+</footer>
+
+
+#
+# Summary band. Uses a subreport to generate summary information
+#
+<summary>
+
+
+#SUBREP CASHTOTALS.FMT
+</summary>
+
+
+#
+# Close event. File closing.
+#
+<close>
+use in qCashtrans
+</close>

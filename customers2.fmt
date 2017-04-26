@@ -1,0 +1,76 @@
+# CUSTOMERS2.FMT
+# Customer list, grouped by status. 
+#
+<config>
+StartConfString='$C10$$COFF$'     // 10 CPI uncondensed
+PaperLenght=60                   // Letter size
+ShowRunProgress=True
+</config>
+
+# Init event
+#
+<init type=Event>
+*-- Retrieve customer data sorted by Status
+SELECT * ;
+  FROM Customers ;
+ ORDER BY CustStat,CustID ;
+  INTO CURSOR qCustomers
+  
+SELECT qCustomers
+GO TOP
+</init>
+
+<macros>
+XCID=CustID
+XSTAT=CustStat
+TCOUNT=_COUNT[]             // Global count
+GCOUNT=_COUNT[CustStat]     // Group count (resets when CustStat changes
+</macros>
+
+<groups>
+G1 = CustStat | h1 | f1     // h1 and f1 are section names for the group's header and footer
+</groups>
+
+<format>
+#   ....+....^....+....^....+....^....+....^....+....^....+....^....+....^....+....^
+he: XYZ Bookstore, INC                                          BASIC CUSTOMERS LIST
+he:                                                             Sorted by ID
+he: 
+he:            ID     Customer name                    
+he:            ====== ================================ 
+de:            [XCID] [CustName                      ] 
+f1:
+f1:            Total %ALLT(CustStat)% customers: %allt(transform(GCOUNT,"999,999"))%
+f1:
+f1:
+su:
+su: 
+su: Total registered customers: %alltrim(transform(TCOUNT,'999,999'))%
+</format>
+
+<h1 StartOnNewPage=Yes>
+           
+  $BON$Current status: %CustStat%$BOFF$
+
+</h1>
+
+<pf1 type=Footer ApplyIf=(CustStat='Active')>
+
+ACTIVOS
+</pf1>
+
+<pf2 type=Footer ApplyIf=(CustStat='Removed')>
+
+REMOVIDOS
+</pf2>
+
+<footer ApplyIf=(NOT INLIST(CustStat,'Active','Removed'))>
+
+%DATETIME%                                                       %PageNo% of %PageCnt%
+</footer>
+
+
+<close Type=Event>
+*-- File closing
+USE IN qCustomers
+</close>

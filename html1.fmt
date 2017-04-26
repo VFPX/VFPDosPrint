@@ -1,0 +1,59 @@
+#
+# HTML1.FMT
+# Basic customer list in HTML format. Note the use of a diferent section markers.
+#
+<config>
+PaperLenght=0
+AutoEject=False
+EjectAfterTitle=False
+EjectBeforeSummary=False
+HTMLMode=True
+SectionBeginMark="<-"
+SectionEndMark="->"
+SendToFile=True
+FileNAme="customers.htm"
+ShowRunProgress=True
+RunProgressMessage="Generating HTML..."
+</config>
+
+<-init->
+select top 25 * ;
+  from customers ;
+ order by custid ;
+ into cursor qCust
+ 
+<-/init->
+ 
+<-header->
+<html>
+<head>
+<title>XYZ Bookstore - Customer list</title>
+</head>
+<body>
+
+<h1>CUSTOMER LIST</h1></p><br>
+This HTML was generated with <b>VFPDosPrint</b>.</p>
+
+<table border="0" width="100%" cellspacing=1 bgcolor=#000000>
+<-/header->
+
+# Note the use of $ mark insted %, to avoid a conflict with the percent sign.
+<-detail->
+    <tr bgcolor=$rowcolor$>
+        <td width="25%">$custid$</td>
+        <td width="75%">$custname$</td>        
+    </tr>
+#set rowcolor=iif(mod(recno(),2)=0,"#CCCCCC","#FFFFFF")    
+<-/detail->
+
+<-footer->
+</table>
+</body>
+</html>
+<-/footer->
+
+<-close->
+if used("qcust")
+ use in qcust
+endif 
+<-/close->

@@ -1,0 +1,29 @@
+# CUSTOMERS1.FMT
+# Basic customer report layout
+#
+<config>
+#StartConfString='$C10$$COFF$'     // 10 CPI uncondensed
+PaperLenght=60                   // Letter size
+ShowRunProgress=True
+BottomMargin=30
+</config>
+
+<macros>
+XCID=CustID
+TCOUNT=_COUNT[]
+</macros>
+
+<format>
+#   ....+....^....+....^....+....^....+....^....+....^....+....^....+....^....+....^
+he: XYZ Bookstore, INC                                          BASIC CUSTOMERS LIST
+he:                                                             Sorted by ID
+he: 
+he:            ID     Customer name                    Current status
+he:            ====== ================================ ===============
+de:            [XCID] [CustName                      ] [CustStat     ] 
+fo:
+fo: %TIME%                                                       %PageNo% of %PageCnt%
+su:
+su: 
+su: Total registered customers: %alltrim(transform(TCOUNT,'999,999'))%
+</format>
