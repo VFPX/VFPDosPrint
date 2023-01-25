@@ -675,9 +675,8 @@ DEFINE CLASS vfpdosprint AS custom
 		oThis=this
 		DP=this
 		local i,cMacro,cExpr,lIsCalc,cOnError
-		cOnError=on("ERROR")
-		on error lError=.T.
-
+		
+		lError =.f.
 
 		for i=1 to alen(this.aMacros,1)
 		 *
@@ -698,8 +697,12 @@ DEFINE CLASS vfpdosprint AS custom
 		   
 		   lError=.F.
 		   
-		   store eval(cExpr) to &cMacro
-		   
+		   try
+		    store eval(cExpr) to &cMacro
+		   Catch
+		    lError = .t.
+		   EndTry
+					   
 		   if lError
 		    store cExpr to &cMacro
 		   endif
@@ -722,13 +725,6 @@ DEFINE CLASS vfpdosprint AS custom
 		 pcTexto=chrt(pcTexto,"$",THIS.MacroChar)
 		endif 
 		pcTexto=this.StrExpand(pcTexto)
-
-		if not empty(cOnError)
-		 on error &cOnError
-		else
-		 on error 
-		endif
-
 
 		return pcTexto
 	ENDPROC
