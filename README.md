@@ -1,5 +1,9 @@
 # VFPDosPrint
-Generate text-based reports that can take full advantage of dot-matrix printer capabilities
+Generate text-based reports that can take full advantage of dot-matrix printer capabilities (VFP 6+).
+
+
+## Note to collaborators
+You are welcome to do any change or enhancement you want on this library, as long you keep the backward compatibility with VFP 6, 7 & 8.
  
  
 ## Quick Guide
