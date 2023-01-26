@@ -1,0 +1,60 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Event Object</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">Event (Object)</font></b> </td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p><p>Each event in a format file is represented by an <strong>Event</strong>
+    object. This objects are automatically created and added to the <a href="p_events.htm">Events</a>
+    collection when a format file is loaded by setting <a href="p_printformat.htm">PrintFormat</a>
+    property. Note that you can change any property of an Event object, but those changes will
+    not be saved to the original format file.<hr>
+    <p><font size="4">Applies to:</font></p>
+    <p><br>
+    <a href="p_events.htm">Events collection</a> </p>
+    <hr>
+    <table border="1" width="100%">
+      <tr>
+        <th width="100%" colspan="5">Properties</th>
+      </tr>
+      <tr>
+        <td width="20%"><a href="p_name.htm">Name</a></td>
+        <td width="20%"><a href="p_object.htm">Object</a></td>
+        <td width="20%"><a href="p_source.htm">Source</a></td>
+        <td width="20%">&nbsp;</td>
+        <td width="20%">&nbsp;</td>
+      </tr>
+    </table>
+    <hr>
+    <p><font size="4">Example:</font></p>
+    <pre><font color="#0000FF">*-- Show some info about INIT event.
+*
+oDP.PrintFormat=&quot;CUSTOMERS.FMT&quot;
+oEvent=oDP.Events.Items(&quot;INIT&quot;)
+?<strong>oEvent</strong>.Name               --&gt; &quot;INIT&quot;
+?<strong>oEvent</strong>.Source             --&gt; &quot;*-- Some code here&quot;</font></pre>
+    <hr>
+    <p><font size="4">See also:</font></p>
+    <p><br>
+    <a href="u_archivosfmt.htm">Format files</a></td>
+  </tr>
+</table>
+</tr></td></table>
+</body>
+</html>

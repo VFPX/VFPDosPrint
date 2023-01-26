@@ -1,0 +1,68 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<TITLE>Propiedad PaperLenght</TITLE>
+</head>
+
+<body>
+
+<p><b><font size="5">PaperLenght (Propiedad)</font></b></p>
+
+<hr>
+
+<p>Permite indicar el tamaño del papel a utilizar (en lineas). Note que esta propiedad es
+utilizada para determinar los puntos donde se debe saltar a una nueva página, pero no
+para configurar <strong>físicamente</strong> el tamaño de la página en la impresora
+(para más información sobre como configurar el tamaño de página en la impresora,
+consulte el manual de usuario de su impresora). Para configurar el tamaño de la página
+en su impresora, puede enviar el comando necesario usando la propiedad <A
+ href="p_startconfstring.htm" >StartConfString</a>.</p>
+
+<p>&nbsp;</p>
+
+<p>Si el informe se emitirá en un papel continuo sin saltos de página, como en ciertas
+impresoras fiscales, puede colocarse PaperLenght a cero, lo cual indica a la clase que el
+papel no tiene un tamaño determinado sino que es continuo. Esto causará que el informe
+imprima todas las lineas de detalle sin saltar la página y que el pié de página se
+imprima justo al finalizar la última linea de detalle. </p>
+
+<hr>
+
+<p><font size="4">Aplica a:</font></p>
+
+<p><br>
+<A href="c_dosprint.htm">Clase DOSPrint</a></p>
+
+<hr>
+
+<p><font size="4">Ejemplo(s):</font></p>
+
+<pre><font color="#0000ff">*-- Se configura la página del informe
+*
+#DEFOBJ oRep AS DOSPrint
+oRep.<strong>PaperLenght</strong>:=60
+oRep.TopMargin:=2
+oRep.BottomMargin:=2
+oRep.LeftMargin:=5</font></pre>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<p><font size="4">Ver también:</font></p>
+
+<p>&nbsp;</p>
+
+<p><A href="p_bottommargin.htm">BottomMargin</a>, <A href="p_topmargin.htm">TopMargin</a>,
+<A href="p_leftmargin.htm">LeftMargin</a></p>
+
+<hr>
+
+<p align="center"><A href="index.htm">[Regresar]</a></p>
+</body>
+</html>

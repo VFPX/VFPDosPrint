@@ -1,0 +1,46 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<TITLE>Propiedad NewPageConfString</TITLE>
+</head>
+
+<body>
+
+<p><b><font size="5">NewPageConfString (Propiedad)</font></b></p>
+
+<hr>
+
+<p>Permite establecer la cadena que se enviará a la impresora cada vez que se inicie una
+nueva página. Esta cadena puede contener los códigos necesarios para configurar la
+impresora según las necesidades del informe. Dentro de esta propiedad puede utilizar las
+mismas macros indicadas para la propiedad <A href="p_startconfstring.htm">StartConfString</a>.</p>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<p><font size="4">Ejemplo(s):</font></p>
+
+<pre><font color="#0000ff">*-- Se configura el informe para que imprima a 12 CPI
+*
+#DEFOBJ oRep AS DOSPrint
+oRep.PaperLenght:=60</font></pre>
+
+<pre><font color="#0000ff">oRep.<strong>NewConfString</strong>:=$C12$
+...
+</font></pre>
+
+<hr>
+
+<p><font size="4">Ver también:</font></p>
+
+<p>&nbsp;</p>
+
+<p><A href="p_ejectstring.htm">EjectString</a>, <A href="p_startconfstring.htm">StartConfString</a></p>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>StrExpand Method</title>
+</head>
+
+<body topmargin=0 leftmargin=0>
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border=0 cellpadding=0 cellspacing=1 width="100%">
+<tr><td class="title">
+<b><font size="5">STRExpand (Method)</font></b>
+
+</tr></td></table>
+<table class="body" border=0 cellpadding=0 cellspacing=5 width="100%" align="center">
+<tr><td class="body">
+
+
+<p>Expands all expressions contained in a given string and returns the result string.</p>
+
+<hr>
+
+<p><font size="4">Applies to:</font></p>
+
+<p><br>
+<a href="index.htm">DOSPrint class</a></p>
+
+<hr>
+
+<p><font size="4">Syntax:</font></p>
+
+<p><br>
+Object.STRExpand(cTexto)</p>
+
+<hr>
+
+<p><font size="4">Where:</font></p>
+
+<table border="1" width="100%">
+  <tr>
+    <td width="20%">Object</td>
+    <td width="80%">Reference to an object of one of the class mentioned in Applies to:</td>
+  </tr>
+  <tr>
+    <td width="20%">cText</td>
+    <td width="80%">Text to expand. Any expression delimited with one of the following
+    delimiters will be expanded:<br>
+    <table border="1" width="60%">
+      <tr>
+        <td width="15%" align="center">$$</td>
+        <td width="60%">Evaluates the expression and inserts the result in the string, expanding
+        or reducing it as needed.</td>
+        <td width="25%" align="center">$NOMEMP$</td>
+      </tr>
+      <tr>
+        <td width="15%" align="center">%%</td>
+        <td width="60%">Same as $$</td>
+        <td width="25%" align="center">%DATE()%</td>
+      </tr>
+      <tr>
+        <td width="15%" align="center">[]</td>
+        <td width="60%">Evaluates the expression and substitutes it with the result, without
+        expanding or reducing the string.</td>
+        <td width="25%" align="center">[CODIGO&nbsp; ]</td>
+      </tr>
+    </table>
+    <p><br>
+    Note that expressions delimited with $$ or %% can change the lenght of the original
+    string, while expressions delimited with [] does not. Also note that expandible
+    expressions can be of any type.<br>
+    <br>
+    If a expression can not be expanded, it will remains unchanged.</td>
+  </tr>
+</table>
+
+<hr>
+
+<p><font size="4">Examples:</font></p>
+
+<pre><font color="#0000FF">LOCAL cNomEmp,cText
+cCompany=&quot;XYZ Bookstore, INC&quot;
+cText=                    &quot;Company: %cCompany%  Date: %date()%&quot;
+?oRep.<strong>STRExpand</strong>(cText) -&gt; Company: XYZ Bookstore, INC  Date: 07-10-2001&quot;
+cText=                    &quot;Company: [cCompany]  Date: %date()%&quot;
+?oRep.<strong>STRExpand</strong>(cText) -&gt; Company: XYZ Bookst  Date: 07-10-2001&quot;</font></pre>
+
+<p>&nbsp;</p>
+
+</tr></td></table>
+</tr></td></table>
+</body>
+</html>

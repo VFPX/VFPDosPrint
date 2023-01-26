@@ -1,0 +1,202 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>DOSPrint's Format Files</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="body" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">DOSPrint's Format Files</font></b> </td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing="5" width="99%" align="center">
+  <tr>
+    <td class="body"><p><p>A DOSPrint's Format File is a text file wichs contains a report
+    definition and layout to be used with DOSPrint. A format file contains sections to define
+    each part of a common report, like Page Header, detail band, Page Footer, as well as page
+    and printer configuration, macro declaration, control grouping, events declaration, &nbsp;
+    etc. <p>Any section is defined with a pair of tags, for example:</p>
+    <pre><font color="#0000FF">&lt;section&gt;
+&lt;/section&gt;</font></pre>
+    <p>Additionally, you can create your own custom sections, by using the section tags:</p>
+    <pre><font color="#0000FF">&lt;MySection&gt;
+This is a custom section inside a format file. The contents of this section
+could be printed using PrintSection method. ($DATE$).
+&lt;/MySection&gt;</font></pre>
+    <p>Once a custom section is defined, you can print it using <a href="m_printsection.htm">PrintSection()</a>
+    method. Note that custom sections are only used by <a href="m_run.htm">Run()</a> method if
+    they are referenced in a defined control group.</p>
+    <p>Any text inside a section is sent to the report, unless it is delimited with and <strong>expansion
+    delimiter</strong>. This delimiters marks expressions that has to be evaluated before
+    insert them in the final report. For example:</p>
+    <pre><font color="#0000FF">&lt;macros&gt;
+COMPNAME='XYZ Bookstore'
+&lt;/macros&gt;
+
+&lt;header&gt;
+Company name: %COMPNAME%
+&lt;/header&gt;</font></pre>
+    <p>will produce the following output:</p>
+    <pre><font color="#0000FF">Company name: XYZ Bookstore</font></pre>
+    <p>There are three diferent kind of delimiters:</p>
+    <div align="left"><table border="1" width="60%">
+      <tr>
+        <td width="15%">% %, $ $</td>
+        <td width="95%">Open expansion. The evaluated expression is inserted taking as much space
+        as needed.</td>
+      </tr>
+      <tr>
+        <td width="15%">[ ]</td>
+        <td width="95%">Closed expansion. The evaluated expression will be inserted using the
+        space marked by the delimiters. If the string to be inserted has more than one line, only
+        the first line will be inserted. </td>
+      </tr>
+      <tr>
+        <td width="15%">{ }</td>
+        <td width="95%">Multiline closed expansion. Works identically as [ ] delimiters, but
+        allows multiple lines. If the string to be inserted has just one line, but its lenghts is
+        greater than the lenght marked by the delimiters, additional lines will be used to print
+        the hole string. You can have multiple expressions of this type in the same line. Note
+        that in the <strong>shareware</strong> version of DP, only one column of this type is
+        allowed.</td>
+      </tr>
+    </table>
+    </div><p>Look at this sample to see how they works:</p>
+    <pre><font color="#0000FF">&lt;macros&gt;
+COMPNAME='XYZ Bookstore, INC'
+&lt;/macros&gt;
+
+&lt;header&gt;
+%COMPNAME%. This line will be expanded to accomodate the macro.
+[COMPNAME]. This line will not be expanded.
+{COMPNAME}. This line will not be expanded, but additional lines will be created.
+&lt;/header&gt;
+
+XYZ Bookstore INC. This line will be expanded to accomodate the macro.</font></pre>
+    <pre><font color="#0000FF">XYZ Bookst. This line will not be expanded.
+XYZ Bookst. This line will not be expanded, but additional lines will be created.
+ore INC</font></pre>
+    <p>&nbsp;</p>
+    <p>Any section has a set of properties that can be used to configure the behavior of the
+    section (click on the links to see a detailed explanation of how to use any of these
+    properties):</p>
+    <pre><font color="#0000FF">&lt;section <strong><a href="p_type.htm">Type</a></strong>=type <strong><a
+href="p_applyif.htm">ApplyIf</a></strong>=condition <strong><a href="p_printonnewpage.htm">PrintOnNewPage</a></strong>=True|False
+         <strong><a
+href="p_integralheight.htm">IntegralHeight</a></strong>=True|False  <a href="p_bandheight.htm"><strong>BandHeight</strong></a>=n<strong>  <a
+href="p_printifblank.htm">PrintIfBlank</a></strong>=True|False
+         <a
+href="p_startonnewpage.htm"><strong>StartOnNewPage</strong></a>=True|False  <a
+href="p_resetpagecounter.htm"><strong>ResetPageCounter</strong></a>=True|False&gt;
+&lt;/section&gt;</font></pre>
+    <p>When declaring a section, you can use <strong>Yes</strong>/<strong>No</strong>
+    constants, wich are identical to <strong>True</strong>/<strong>False</strong>, i.e.: </p>
+    <pre><font color="#0000FF">&lt;detail Type=DETAIL IntegralHeight=<strong>False</strong>  PrintIfBlank=<strong>Yes</strong>&gt;
+&lt;/detail&gt;</font></pre>
+    <p>Another kind of lines allowed inside a section are the <strong>Section's commands</strong>.
+    Section's commands are executed <strong>before</strong> the section text is printed. At
+    this time, the following commands are supported:</p>
+    <div align="left"><table border="1" width="60%">
+      <tr>
+        <td width="15%">#SET</td>
+        <td width="95%">Defines a macro associated to the macro. Section's macros are only
+        available inside the section who defines them.</td>
+      </tr>
+      <tr>
+        <td width="15%">#EXEC</td>
+        <td width="95%">Executes any valid <strong>VFP</strong> command.</td>
+      </tr>
+      <tr>
+        <td width="15%">#SUBREP</td>
+        <td width="95%">Calls a subreport and inserts the resulting text in that position.
+        (registered version only)</td>
+      </tr>
+    </table>
+    </div><p>All sections in a format file defines the complete layout of the report as well
+    as any speciall configurations needed to generate the report.</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p><font size="4">Events:</font></p>
+    <p>Events are speciall cases of a section. An event section is a section that contains <strong>Visual
+    FoxPro</strong> code instead text to be printed. Any section with <strong>EVENT</strong>
+    as its Type is considered an event. Additionally, any section called <strong>Init</strong>
+    or <strong>Close</strong> is automatically assumed as an event. If defined, <strong>Init</strong>
+    event will be automatically executed before any output is sent the current report. If the
+    event fails (returns <strong>False</strong>), the <a href="m_run.htm">Run</a> method will
+    fails. In the other hand, <strong>Close</strong> event (if defined) will be automatically
+    executed when the current report is done and before terminate the <a href="m_run.htm">Run</a>
+    method. When executing an event, DP defines certain variables that can be used inside the
+    event:</p>
+    <div align="left"><table border="1" width="60%">
+      <tr>
+        <td width="15%">DP</td>
+        <td width="95%">Reference to the current DP instance.</td>
+      </tr>
+      <tr>
+        <td width="15%">DPArg0...DPArg10</td>
+        <td width="95%">Arguments passed to the event.</td>
+      </tr>
+      <tr>
+        <td width="15%">DPRETURN</td>
+        <td width="95%">Use this variable to stores the value to be returned by the event.</td>
+      </tr>
+    </table>
+    </div><p>To learn more about events, see <a href="m_callevent.htm">CallEvent</a> method</p>
+    <hr>
+    <p><font size="4">Example:</font></p>
+    <pre><font color="#0000FF"># CUSTOMERS.FMT
+# Basic customer report
+#
+&lt;config&gt;
+StartConfString=$C10$$COFF$    // 10 CPI not condensed (80 cols)
+PaperLenght=60
+TopMargin=2
+LeftMargin=5                 
+&lt;/config&gt;
+
+&lt;macros&gt;
+CSTATUS=proper(STATUS)
+COMPNAME='XYZ Bookstore'
+COMPADDRESS='Caracas, Venezuela'
+&lt;/macros&gt;
+
+&lt;header&gt;
+#...+....[....+....[....+....1....+....1....+....1....+....1....+....1....+....1
+[COMPNAME                         ]                                CUSTOMER LIST
+[COMPADDRESS                      ]
+
+CUSTOMER ID           CUSTOMER NAME                          STATUS
+====================  ====================================== ==========
+&lt;/header&gt;
+
+&lt;detail&gt;
+[COD               ]  [PROPER(CUSTNAME)                    ] [CSTATUS]
+&lt;/detail&gt;
+
+
+&lt;footer&gt;
+
+
+[datetime           ]                                                   %PageNo% of %PageCnt%
+&lt;/footer&gt;</font></pre>
+    </td>
+  </tr>
+</table>
+
+</tr></td></table>
+
+</tr></td></table>
+</body>
+</html>

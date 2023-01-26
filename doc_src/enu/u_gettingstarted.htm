@@ -1,0 +1,105 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Getting started</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">Getting started</font></b> </td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p>The faster way to start using DOSPrint is using <a
+    href="u_archivosfmt.htm">format files</a>. All you will need is:<p>- A format file wich
+    contains the report design<br>
+    - A data set to be used to generate the report</p>
+    <p>Let's say we have a Customer table with the following columns:</p>
+    <p>- CustID<br>
+    - CustName<br>
+    - CustAddress<br>
+    - CustPhone<br>
+    - CustBalance</p>
+    <p>Now, we need to create a format file to generate a simple listing report. Create a text
+    file with the following text. Once done, save the file with the name 'CUSTOMERS.FMT':</p>
+    <p>&nbsp;</p>
+    <pre><font color="#0000FF"># CUSTOMERS.FMT
+# Basic customer report
+#
+&lt;config&gt;
+StartConfString=$C10$$COFF$    // 10 CPI not condensed (80 cols)
+PaperLenght=60
+TopMargin=2
+LeftMargin=5                 
+&lt;/config&gt;
+
+&lt;macros&gt;
+COMPNAME='XYZ Bookstore'
+COMPADDRESS='Caracas, Venezuela'
+XCID=CustID
+XCustBal=TRANSFORM(CustBalance,'9,999,999.99')
+&lt;/macros&gt;
+
+&lt;format&gt;
+#...+....[....+....[....+....1....+....1....+....1....+....1....+....1....+....1
+he: [COMPNAME                         ]                                CUSTOMER LIST
+he: %COMPADDRESS%
+he: 
+he: ID      FULL NAME               ADDRESS               PHONE #            BALANCE
+he: ======= ======================= ===================== ============= ============
+de: [XCID ] [PROPER(CustName)     ] [CustAddress        ] [CustPhone  ] [XCustBal  ]
+fo: 
+fo: 
+fo: [datetime           ]                                                   %pageno%
+&lt;/format&gt;</font></pre>
+    <p>&nbsp;</p>
+    <p>Before proceed with the next step, lets take a closer look of this format file. First,
+    note that everything is contained in sections wich starts with &lt; &gt; and ends with
+    &lt;/ &gt;. Each section has a defined purpose inside the format:</p>
+    <p>&lt;config&gt;: configures page size and margins, as well as specific printer
+    configurations.<br>
+    &lt;macros&gt;: define report-level variables (called <strong>Macros</strong>), that are
+    used in other sections across the format.<br>
+    &lt;format&gt;: define the layout of the report.<br>
+    Everyting enclosed with '[ ]' or '% %' delimiters are <strong>expandible expresions</strong>.
+    This expressions will be evaluated and the result inserted in the text in the same
+    position of the expanded expression. Finally, any line starting with # will be considered
+    as a comment and will not be sent to the final report, as well as any empty line or text
+    that is not enclosed inside a section.</p>
+    <p>Now, we are ready to generate our text report. All we need now is a data set and an
+    instance of DOSPrint class:</p>
+    <pre><font color="#0000FF">*-- Generating customer report
+*
+SELECT 0
+USE CUSTOMERS
+GO TOP
+
+LOCAL oDP
+SET CLASSLIB TO DOSPrint3 ADDITIVE
+oDP=CREATEOBJECT(&quot;cDOSPrint&quot;)
+oDP.PrintFormat=&quot;CUSTOMERS.FMT&quot;
+oDP.Run()
+</font></pre>
+    <p>At this time, we have our report generated and ready to be printed. Yes, is THAT easy.
+    You can either sends the report to a defined printer or save it to a file:</p>
+    <pre><font color="#0000FF">oDP.Print( GETPRINTER() )     &amp;&amp; Send report to a selected printer
+oDP.PrintToFile( GETFILE() )  &amp;&amp; Save report to a disk file
+</font></pre>
+    <p>This is a basic example of what can be done using DOSPrint. Please, read carefully this
+    help file to learn how you can use DOSprint to generate really complex text-based reports
+    or even generate formated files like HTML or XML!.</td>
+  </tr>
+</table>
+</tr></td></table>
+</body>
+</html>

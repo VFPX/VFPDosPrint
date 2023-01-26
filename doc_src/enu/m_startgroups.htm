@@ -1,0 +1,75 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>StartGroups Method</title>
+</head>
+
+<body topmargin=0 leftmargin=0>
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border=0 cellpadding=0 cellspacing=1 width="100%">
+<tr><td class="title">
+<b><font size="5">StartGroups (Method)</font></b>
+
+</tr></td></table>
+<table class="body" border=0 cellpadding=0 cellspacing=5 width="100%" align="center">
+<tr><td class="body">
+
+
+<p>Initializes all defined groups to process a new report. This method is valid only if
+you are using <a href="u_archivosfmt.htm">format files</a>.</p>
+
+<hr>
+
+<p><font size="4">Applies to:</font></p>
+
+<p><br>
+<a href="index.htm">DOSPrint class</a></p>
+
+<hr>
+
+<p><font size="4">Syntax:</font></p>
+
+<p><br>
+Object.StartGroups()</p>
+
+<hr>
+
+<p><font size="4">Where:</font></p>
+
+<table border="1" width="100%">
+  <tr>
+    <td width="20%">Object</td>
+    <td width="80%">Reference to an object of one of the class mentioned in Applies to:</td>
+  </tr>
+</table>
+
+<hr>
+
+<p><font size="4">Examples:</font></p>
+
+<pre><font color="#0000FF">oRep.<strong>StartGroups</strong>()
+DO WHILE NOT EOF()
+ oRep.EvalGroups()
+ oRep.PrintSection(&quot;DEATAIL&quot;)
+ SKIP
+ENDDO
+oRep.EndGroups()
+</font></pre>
+
+<hr>
+
+<p><font size="4">See also:</font></p>
+
+<p><br>
+<a href="m_evalgroups.htm">EvalGroups</a>, <a href="m_endgroups.htm">EndGroups</a>, <a
+href="u_archivosfmt.htm">Format files</a></p>
+
+</tr></td></table>
+</tr></td></table>
+</body>
+</html>

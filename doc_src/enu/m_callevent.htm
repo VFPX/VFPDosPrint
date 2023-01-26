@@ -1,0 +1,81 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CallEvent Method</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">CallEvent (Method)</font></b> </td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p><p>Executes an event defined in the current <a href="m_callevent.htm">format
+    file</a>. The result of the event is inserted in the current report.<hr>
+    <p><font size="4">Applies to:</font></p>
+    <p><br>
+    <a href="index.htm">DOSPrint class</a></p>
+    <hr>
+    <p><font size="4">Syntax:</font></p>
+    <p><br>
+    Object.CallEvent(cEvent[,pu0...pu10])</p>
+    <hr>
+    <p><font size="4">Where:</font></p>
+    <table border="1" width="100%">
+      <tr>
+        <td width="20%">Object</td>
+        <td width="80%">Reference to an object of one of the class mentioned in Applies to:</td>
+      </tr>
+      <tr>
+        <td width="20%">cEvent</td>
+        <td width="80%">Name of the event to execute. If the event does not exists, an empty
+        string will be returned.</td>
+      </tr>
+      <tr>
+        <td width="20%">pu0...pu10</td>
+        <td width="80%">Up to 10 optional arguments to be passed to the event.</td>
+      </tr>
+    </table>
+    <hr>
+    <p><font size="4">Examples:</font></p>
+    <pre><font color="#0000FF">*-- How to use internal events to do calculations inside a format
+*
+&lt;detail&gt;
+[COD] [CUSTNAME         ] [TINVOICES    ]
+#SET TINVOICES=DP.CallEvent('GetCustomerInvoices',COD)
+&lt;/detail&gt;
+
+# GetCustomerInvoices (Event)
+# Return the total amout for customer's invoices. DPArg0 and DPRETURN are predefined 
+# variables.
+#
+&lt;GetCustomerInvoices Type=EVENT&gt;
+LOCAL cCustID,nTotal
+cCustID=DPArg0
+
+SELECT 0
+SELECT SUM(Total) AS Total FROM Invoices WHERE CustID=cCustID INTO CURSOR Q1
+nTotal=Q1.Total
+USE IN Q1
+
+DPRETURN=TRANSFORM(nTotal,&quot;9,999,999.99&quot;)+&quot;$&quot;
+&lt;/GetCustomerInvoices&gt;</font></pre>
+    <hr>
+    <p><font size="4">See also:</font></p>
+    <p><br>
+    <a href="u_archivosfmt.htm">Format files</a></td>
+  </tr>
+</table>
+</tr></td></table>
+</body>
+</html>

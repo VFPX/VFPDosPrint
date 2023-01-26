@@ -1,9 +1,11 @@
-**************************************************
-*-- Class:        vfpdosprint 
-*-- ParentClass:  custom
-*-- BaseClass:    custom
-*-- Marca de hora:   07/21/14 07:01:05 PM
-*-- DOSPrint v4.0
+* 
+*   VDP.PRG
+*   VFP DOS PRINT LIBRARY
+*
+*   AUTHOR: VICTOR ESPINA
+*   VERSION: 1.0c
+*   DATE: JUL 21, 2014
+* 
 *
 DEFINE CLASS vfpdosprint AS custom
 
@@ -81,7 +83,7 @@ DEFINE CLASS vfpdosprint AS custom
 	HIDDEN oprogressform
 	oprogressform = .NULL.
 	*-- Versión actual
-	version = (('1.0b'))
+	version = '1.0c'
 	*-- Lleva el conteo del número de páginas generadas
 	pagegen = 0
 	*-- Caracter usado para delimitar los macros expandibles
@@ -671,13 +673,15 @@ DEFINE CLASS vfpdosprint AS custom
 		local tx
 		tx=seconds()
 
-		private oThis,lError,DP
+		private oThis,DP,lERror
 		oThis=this
 		DP=this
 		local i,cMacro,cExpr,lIsCalc,cOnError
-		cOnError=on("ERROR")
-		on error lError=.T.
-
+		
+		#IF VERSION(5) < 800
+			cOnError=on("ERROR")
+			on error lError=.T.
+		#ENDIF
 
 		for i=1 to alen(this.aMacros,1)
 		 *
@@ -695,14 +699,21 @@ DEFINE CLASS vfpdosprint AS custom
 		    cExpr=this.STRExpand(cExpr)
 		    this.aMacros[i,4]=(cExpr<>cExpr)  && Se actualiza el status de expandible.
 		   endif 
-		   
-		   lError=.F.
-		   
-		   store eval(cExpr) to &cMacro
-		   
+
+		   lError=.F.		   		   
+		   #IF VERSION(5) < 800
+			   store eval(cExpr) to &cMacro
+		   #ELSE
+		   	   TRY
+		   	       store eval(cExpr) to &cMacro
+		   	   CATCH TO ex
+		   	   	   lError = .T.
+		   	   ENDTRY
+		   #ENDIF
 		   if lError
 		    store cExpr to &cMacro
 		   endif
+
 		   *
 		  else
 		   store cExpr to (cMacro)
@@ -723,11 +734,13 @@ DEFINE CLASS vfpdosprint AS custom
 		endif 
 		pcTexto=this.StrExpand(pcTexto)
 
-		if not empty(cOnError)
-		 on error &cOnError
-		else
-		 on error 
-		endif
+		#IF VERSION(5) < 800
+			if not empty(cOnError)
+			 on error &cOnError
+			else
+			 on error 
+			endif
+		#ENDIF
 
 
 		return pcTexto
@@ -960,8 +973,11 @@ DEFINE CLASS vfpdosprint AS custom
 		 *
 		 local cVarName,nOcur,nPos,nPos2,cVarType,uVarValue,nExprLon,cVarExpr,cOnError
 		 private lError
-		 cOnError=on("ERROR")
-		 on error lError=.T.
+		 
+		 #IF VERSION(5) < 800
+			 cOnError=on("ERROR")
+			 on error lError=.T.
+		 #ENDIF
 		 
 		 
 		 *-- Se inicia un ciclo infinito para procesar macros de longitud variable. El ciclo 
@@ -990,7 +1006,15 @@ DEFINE CLASS vfpdosprint AS custom
 		  cVarExpr=allt(cVarName)
 
 		  lError=.F.
-		  uVarValue=eval(cVarExpr)
+		  #IF VERSION(5) < 800
+		  	uVarValue=eval(cVarExpr)
+		  #ELSE
+		  	TRY
+		  		uVarValue=eval(cVarExpr)
+		  	CATCH TO ex
+		  		lERror = .T.
+		  	ENDTRY
+		  #ENDIF	
 		  if lError
 		   nOcur=nOcur + 2
 		   loop
@@ -1052,7 +1076,15 @@ DEFINE CLASS vfpdosprint AS custom
 		  nExprLon=len(cVarName) + 2
 		  cVarExpr=allt(cVarName)
 		  lError=.F.
-		  uVarValue=eval(cVarExpr)
+		  #IF VERSION(5) < 800
+		  	uVarValue=eval(cVarExpr)
+          #ELSE
+		  	TRY
+		  		uVarValue=eval(cVarExpr)
+		  	CATCH TO ex
+		  		lERror = .T.
+		  	ENDTRY          
+          #ENDIF
 		  if lError
 		   nOcur=nOcur + 1
 		   loop
@@ -1114,7 +1146,15 @@ DEFINE CLASS vfpdosprint AS custom
 		  nExprLon=len(cVarName) + 2
 		  cVarExpr=allt(cVarName)
 		  lError=.F.
-		  uVarValue=eval(cVarExpr)
+		  #IF VERSION(5) < 800
+		  	uVarValue=eval(cVarExpr)
+          #ELSE
+		  	TRY
+		  		uVarValue=eval(cVarExpr)
+		  	CATCH TO ex
+		  		lERror = .T.
+		  	ENDTRY          
+          #ENDIF
 		  if lError
 		   nOcur=nOcur + 1
 		   loop
@@ -1250,11 +1290,13 @@ DEFINE CLASS vfpdosprint AS custom
 		 
 		 *-- Se restaura la rutina de errores
 		 *
-		 if not empty(cOnError)
-		  on error &cOnError
-		 else
-		  on error 
-		 endif
+		 #IF VERSION(5) < 800
+			 if not empty(cOnError)
+			  on error &cOnError
+			 else
+			  on error 
+			 endif
+		 #ENDIF
 		 
 		 
 		 *-- Se devuelve la cadena expandida
@@ -1890,10 +1932,14 @@ DEFINE CLASS vfpdosprint AS custom
 
 		*-- Se crean los macros definidos
 		*
-		private oThis,cOnError,lError
-		cOnError=on("ERROR")
+		LOCAL cOnError
+		private oThis,lError
 		lError=.F.
-		on error lError=.T.
+		
+		#IF VERSION(5) < 800
+		    cOnError=on("ERROR")
+			on error lError=.T.
+	    #ENDIF
 
 		oThis=this
 		local i,cMacro,cExpr,lIsCalc,k
@@ -1912,7 +1958,15 @@ DEFINE CLASS vfpdosprint AS custom
 		 if not lIsCalc
 		  if vartype(cExpr)="C" 
 		   lError=.F.
-		   store eval(cExpr) to &cMacro
+		   #IF VERSION(5) < 800
+		       store eval(cExpr) to &cMacro
+		   #ELSE
+		       TRY
+		          store eval(cExpr) to &cMacro
+		       CATCH TO ex
+		          lError = .T.
+		       ENDTRY
+		   #ENDIF
 		   if lError
 		    store cExpr to &cMacro
 		   endif
@@ -1924,11 +1978,13 @@ DEFINE CLASS vfpdosprint AS custom
 		 endif
 		endfor
 
-		if empty(cOnError)
-		 on error
-		else
-		 on error &cOnError
-		endif
+        #IF VERSION(5) < 800
+			if empty(cOnError)
+			 on error
+			else
+			 on error &cOnError
+			endif
+		#ENDIF
 
 
 		*-- Se obtienen los valores actuales para cada grupo
@@ -2787,13 +2843,16 @@ DEFINE CLASS vfpdosprint AS custom
 	PROCEDURE checkexpr
 		lparameters pcExpr,plDoCalcs
 
-		private oThis,lError,DP,DPEOF
+		private oThis,DP,DPEOF,lERror
 		oThis=this
 		DP=this
 		DPEOF=this.EOF
-		local i,cMacro,cExpr,lIsCalc,cOnError
-		cOnError=on("ERROR")
-		on error lError=.T.
+		local i,cMacro,cExpr,lIsCalc,cOnERror
+		
+		#IF VERSION(5) < 800
+			cOnError=on("ERROR")
+			on error lError=.T.
+		#ENDIF
 
 		for i=1 to alen(this.aMacros,1)
 		 *
@@ -2807,10 +2866,19 @@ DEFINE CLASS vfpdosprint AS custom
 		  if vartype(cExpr)="C" 
 		   cExpr=this.STRExpand(cExpr)
 		   lError=.F.
-		   store eval(cExpr) to (cMacro)
+		   #IF VERSION(5) < 800
+			   store eval(cExpr) to (cMacro)
+		   #ELSE
+		       TRY
+		           store eval(cExpr) to (cMacro)
+		       CATCH TO ex
+		           lError = .T.
+		       ENDTRY
+		   #ENDIF
 		   if lError
 		    store cExpr to (cMacro)
 		   endif
+
 		  else
 		   store cExpr to (cMacro)
 		  endif
@@ -2824,17 +2892,26 @@ DEFINE CLASS vfpdosprint AS custom
 		endfor
 
 		local lResult
-		lError=.F.
-		lResult=eval(pcExpr)
-		if lError
-		 lResult=.F.
-		endif
+		
+		#IF VERSION(5) < 800
+			lError=.F.
+			lResult=eval(pcExpr)
+			if lError
+			 lResult=.F.
+			endif
 
-		if not empty(cOnError)
-		 on error &cOnError
-		else
-		 on error 
-		endif
+			if not empty(cOnError)
+			 on error &cOnError
+			else
+			 on error 
+			endif		
+		#ELSE
+			TRY
+				lResult=eval(pcExpr)
+			CATCH TO ex
+				lResult = .F.
+			ENDTRY
+		#ENDIF
 
 		return lResult
 	ENDPROC

@@ -1,0 +1,106 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Método Run</title>
+</head>
+
+<body>
+
+<p><a name="TOP"></a></p>
+
+<p><b><font size="5">STRExpand (Método)</font></b></p>
+
+<hr>
+
+<p>Expande las expresiones contenidas en una cadena dada. El método devuelve la cadena
+modificada después de la expansión.</p>
+
+<hr>
+
+<p><font size="4">Aplica a:</font></p>
+
+<p><br>
+<a href="c_dosprint.htm">Clase DOSPrint</a></p>
+
+<hr>
+
+<p><font size="4">Sintaxis:</font></p>
+
+<p><br>
+Object.STRExpand(cTexto)</p>
+
+<hr>
+
+<p><font size="4">Donde:</font></p>
+
+<p>&nbsp;</p>
+
+<table border="1" width="100%">
+  <tr>
+    <td width="20%">Object</td>
+    <td width="80%">Referencia a un objeto perteneciente a una de las clases indicadas en
+    Aplica a:</td>
+  </tr>
+  <tr>
+    <td width="20%">cTexto</td>
+    <td width="80%">Texto a expandir. Las expresiones expandibles dentro del texto están
+    delimitadas por cualquier de los siguientes caracteres:<br>
+    <table border="1" width="60%">
+      <tr>
+        <td width="15%" align="center">$$</td>
+        <td width="60%">La expresión es expandida y sustituida en la cadena de acuerdo a la
+        longitud del resultado de la expansión.</td>
+        <td width="25%" align="center">$NOMEMP$</td>
+      </tr>
+      <tr>
+        <td width="15%" align="center">%%</td>
+        <td width="60%">Igual a $$</td>
+        <td width="25%" align="center">%DATE()%</td>
+      </tr>
+      <tr>
+        <td width="15%" align="center">[]</td>
+        <td width="60%">La expresión es expandida y sustituida en la cadena de acuerdo a la
+        longitud indicada entre los signos [].</td>
+        <td width="25%" align="center">[CODIGO&nbsp; ]</td>
+      </tr>
+    </table>
+    <p><br>
+    Note que las expresiones delimitadas con los signos $$ y %% alteran la longitud del texto
+    original al ser expandidos, mientras que las delimitadas con los signos [] no la alteran.
+    Note también que las expresiones a expandir pueden ser de cualquier tipo. <br>
+    <br>
+    Si una expresión expandible no puede ser evaluada, no será sustituida en el texto
+    original.</td>
+  </tr>
+</table>
+
+<hr>
+
+<p><font size="4">Ejemplo(s):<br>
+</font></p>
+
+<pre><font color="#0000FF">*-- #1: Expresiones delimitadas con $$ y/o %%
+*
+#DEFVAR cNomEmp,cTexto
+cNomEmp:=&quot;Panaderia XYZ, C.A.&quot;
+cTexto:=                   &quot;Empresa: %cEmpresa%  Fecha: %date()%&quot;
+?oRep.<strong>STRExpand</strong>(cTexto) -&gt; Empresa: Panaderia XYZ, C.A.  Fecha: 07-10-2001&quot;
+cTexto:=                   &quot;Empresa: [cEmpresa   ]  Fecha: %date()%&quot;
+?oRep.<strong>STRExpand</strong>(cTexto) -&gt; Empresa: Panaderia XYZ  Fecha: 07-10-2001&quot;</font></pre>
+
+<hr>
+
+<p><font size="4">Ver también:</font></p>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<p align="center"><a href="index.htm">[Regresar]</a></p>
+</body>
+</html>

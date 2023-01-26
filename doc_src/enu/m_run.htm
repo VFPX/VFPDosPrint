@@ -1,0 +1,89 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Run Method</title>
+</head>
+
+<body topmargin=0 leftmargin=0>
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border=0 cellpadding=0 cellspacing=1 width="100%">
+<tr><td class="title">
+<b><font size="5">Run (Method)</font></b>
+
+</tr></td></table>
+<table class="body" border=0 cellpadding=0 cellspacing=5 width="100%" align="center">
+<tr><td class="body">
+
+
+<p>Generates a report using the <a href="u_archivosfmt.htm">format file</a> indicated in
+the <a href="p_printformat.htm">PrintFormat</a> property.</p>
+
+<hr>
+
+<p><font size="4">Applies to:</font></p>
+
+<p><br>
+<a href="index.htm">DOSPrint class</a></p>
+
+<hr>
+
+<p><font size="4">Syntax:</font></p>
+
+<p><br>
+Object.Run([cAlias][,cWhileExpr][,cForExpr])</p>
+
+<hr>
+
+<p><font size="4">Where:</font></p>
+
+<table border="1" width="100%">
+  <tr>
+    <td width="20%">Object</td>
+    <td width="80%">Reference to an object of one of the class mentioned in Applies to:</td>
+  </tr>
+  <tr>
+    <td width="20%">cAlias</td>
+    <td width="80%">Optional. Name of the table, cursor or view to use in the reporte. If
+    missing, the current alias will be asumed.</td>
+  </tr>
+  <tr>
+    <td width="20%">cWhileExpr</td>
+    <td width="80%">Optional. Conditional expression that is evaluted for each record in the
+    data source. The report processing will stop at the first non-compliant record.</td>
+  </tr>
+  <tr>
+    <td width="20%">cForExpr</td>
+    <td width="80%">Optional. Conditional expression that is evaluted for each record in the
+    data source. If any record does not compliant with this expressión, will be skipped and
+    the report processing will continue until the end of the file.</td>
+  </tr>
+</table>
+
+<hr>
+
+<p><font size="4">Examples:</font></p>
+
+<pre><font color="#0000FF">oRep=CREATEOBJECT(&quot;cDOSPrint&quot;)
+oRep.PrintFormat=&quot;CUSTOMERS.FMT&quot;
+oRep.Clear()
+oRep.<strong>Run</strong>(&quot;QCLIENTES&quot;,&quot;&quot;,&quot;STATUS=[ACTIVE]&quot;)
+oRep.Print()
+
+</font></pre>
+
+<hr>
+
+<p><font size="4">See also:</font></p>
+
+<p><br>
+<a href="p_printformat.htm">PrintFormat</a>, <a href="u_archivosfmt.htm">Format files</a></p>
+
+</tr></td></table>
+</tr></td></table>
+</body>
+</html>

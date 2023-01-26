@@ -1,0 +1,239 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>What's new</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">What's new</font></b></td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p>This new version of <strong>DOSPrint</strong> has a lot of new features
+    and added functionality:<p>&nbsp;</p>
+    <div align="left"><table border="1" width="100%">
+      <tr>
+        <th width="20%">Area</th>
+        <th width="20%">Feature name</th>
+        <th width="60%">Description</th>
+      </tr>
+      <tr>
+        <td width="20%" rowspan="12" valign="top">New properties</td>
+        <td width="20%">Copies</td>
+        <td width="60%">Default number of copies</td>
+      </tr>
+      <tr>
+        <td width="20%">Events</td>
+        <td width="60%">Collection of events defined in the current format file</td>
+      </tr>
+      <tr>
+        <td width="20%">FileName</td>
+        <td width="60%">Default disk file name (used when send report to disk file)</td>
+      </tr>
+      <tr>
+        <td width="20%">PrintHeaderOnSummary</td>
+        <td width="60%">Prints or not header section when printing summary section</td>
+      </tr>
+      <tr>
+        <td width="20%">PrintHeaderOnTitle</td>
+        <td width="60%">Prints or not header section when printing title section</td>
+      </tr>
+      <tr>
+        <td width="20%">PrinterName</td>
+        <td width="60%">Default printer name</td>
+      </tr>
+      <tr>
+        <td width="20%">RunCallBack</td>
+        <td width="60%">Callback expression for run process</td>
+      </tr>
+      <tr>
+        <td width="20%">RunProgressMessage<br>
+        ShowRunProgress</td>
+        <td width="60%">Activate or desactivate a progress windows while executing Run method. The
+        progress message is customizable.</td>
+      </tr>
+      <tr>
+        <td width="20%">Sections</td>
+        <td width="60%">Collection of all sections defined in the current format file</td>
+      </tr>
+      <tr>
+        <td width="20%">SectionBeginMark<br>
+        SectionEndMark</td>
+        <td width="60%">Customize delimiters for section tags</td>
+      </tr>
+      <tr>
+        <td width="20%">SendToFile<br>
+        SentToPrinter<br>
+        SendToText</td>
+        <td width="60%">Configure the default output of the current report</td>
+      </tr>
+      <tr>
+        <td width="20%">ShowNullValues</td>
+        <td width="60%">Show or hide null values inside the report</td>
+      </tr>
+      <tr>
+        <td width="100%" colspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="20%" rowspan="9" valign="top">New methods</td>
+        <td width="20%">CallEvent</td>
+        <td width="60%">Executes an event defined in the current format file</td>
+      </tr>
+      <tr>
+        <td width="20%">CallSubReport</td>
+        <td width="60%">Calls another format files as a nested report</td>
+      </tr>
+      <tr>
+        <td width="20%">GetFormatSectionList</td>
+        <td width="60%">Returns a collection with the names of all sections defined in the current
+        format file</td>
+      </tr>
+      <tr>
+        <td width="20%">LoadFormatSection</td>
+        <td width="60%">Returns a Section object wich represents a section defined in the current
+        format file</td>
+      </tr>
+      <tr>
+        <td width="20%">PrintToText</td>
+        <td width="60%">Returns a string with the results of the current report</td>
+      </tr>
+      <tr>
+        <td width="20%">RunFormat</td>
+        <td width="60%">Quick way to execute a format file</td>
+      </tr>
+      <tr>
+        <td width="20%">SendFileToPrinter</td>
+        <td width="60%">Sends a file to a printer</td>
+      </tr>
+      <tr>
+        <td width="20%">SendTextToPrinter</td>
+        <td width="60%">Sends any string to a printer</td>
+      </tr>
+      <tr>
+        <td width="20%">SetMacroValue</td>
+        <td width="60%">Changes the current value of a defined macro</td>
+      </tr>
+      <tr>
+        <td width="100%" colspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="20%" rowspan="3" valign="top">Format files syntax</td>
+        <td width="20%">Sections properties</td>
+        <td width="60%">New <strong>Type</strong>, <strong>ApplyIf</strong>, <strong>PrintOnNewPage</strong>
+        and <strong>IntegralHeight</strong> properties for any defined section</td>
+      </tr>
+      <tr>
+        <td width="20%">Format section</td>
+        <td width="60%">Special section wich highly simplifies the report design.</td>
+      </tr>
+      <tr>
+        <td width="20%">Events</td>
+        <td width="60%">Special sections wich contains <strong>VFP</strong> source code that can
+        be executed from any point inside a format file</td>
+      </tr>
+    </table>
+    </div></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p><font size="4">Fixed bugs:</font></p>
+
+<p>Additionally, the following know bugs where fixed: 
+
+<ul>
+  <li>When a footer section does not fit in the current page, a page break is generated but
+    the Header section is not printed.</li>
+  <li>Current value for defined macro went to blanks where macros are used in Summary section
+    or Footer section in the last page of the report.</li>
+  <li>If an expandible expression delimited with [ ] was incorrect, the next expandible
+    expression is not expanded either.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><font size="4">New predefined macro PageCnt:</font></p>
+
+<p>Yes! now you can put a 'Page 0 of 0' in your DP reports, using the new predefined macro
+<strong>PageCnt</strong>. Just that easy: put a %PageCnt% inside your format file and the
+macro will be expanded at the end of the report.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><font size="4">DP as an Activex Server for VB users:</font></p>
+
+<p>Starting with this version of <strong>DOSPrint</strong>, Visual Basic users can take
+advantage of the powerfull features of DP. In order to use DP from VB, the only thing you
+need to do is register DP.EXE using REGSVR32.EXE. Then, just add the references to 'DP
+Type Library' into your VB project and create an instance of DP using <strong>CreateObject</strong>()
+method:</p>
+
+<pre><font color="#0000FF">' Example of how to use DOSPrint4 from VB
+'
+Dim oADO As ADODB.Connection
+Dim oRS As ADODB.Recordset
+ 
+Dim cConnectStr As String
+Dim SQL As String
+Dim Foo As Variant
+ 
+Set oADO = New ADODB.Connection
+Set oRS = New ADODB.Recordset
+ 
+Set oDP = CreateObject(&quot;DP.cDOSPrint&quot;)
+oDP.ShowRunProgress = True
+
+cConnectStr = &quot;Provider=Microsoft.Jet.OLEDB.4.0;&quot; _
+              &amp; &quot;Data Source=c:\program files\&quot; _
+              &amp; &quot;Microsoft Visual Studio\VB98\biblio.mdb&quot;
+               
+SQL = &quot;SELECT * FROM Publishers ORDER BY PubID&quot;
+               
+oADO.Open cConnectStr
+oRS.Open SQL, oADO, adOpenDynamic
+ 
+oDP.PrintFormat = &quot;PUBLISHERS.FMT&quot;
+Foo = oDP.Run(oRS)
+Foo = oDP.Print('FX-1050')
+oDP = Null
+  
+oRS.Close
+oADO.Close</font></pre>
+
+<p>&nbsp;</p>
+
+<pre><font color="#0000FF"># PUBLISHERS.FMT
+#
+&lt;config&gt;
+PaperLenght=60
+&lt;/config&gt;
+
+&lt;format&gt;
+#   ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+he: BIBLIO                                                      REGISTERED PUBLISHERS
+he: 
+he: ID      FUll NAME            COMPANY NAME          ADDRESS
+he: ======= ==================== ===================== ==========================
+de: [PubID] [Name              ] [Company_Name       ] {Address                 }
+fo:
+fo: [DATETIME]                                                  %PageNo% of %PageCnt%
+&lt;/format&gt;</font></pre>
+</tr></td></table>
+</body>
+</html>

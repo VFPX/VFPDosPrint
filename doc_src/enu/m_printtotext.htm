@@ -1,0 +1,60 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>PrintToText Method</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">PrintToText (Method)</font></b> <br>
+    (registered version only)</td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p><p>Returns a string with the contents of the current report.<hr>
+    <p><font size="4">Applies to:</font></p>
+    <p><br>
+    <a href="index.htm">DOSPrint class</a></p>
+    <hr>
+    <p><font size="4">Syntax:</font></p>
+    <p><br>
+    Object.PrintToText([,nCopies])</p>
+    <hr>
+    <p><font size="4">Where:</font></p>
+    <table border="1" width="100%">
+      <tr>
+        <td width="20%">Object</td>
+        <td width="80%">Reference to an object of one of the class mentioned in Applies to:</td>
+      </tr>
+      <tr>
+        <td width="20%">nCopies</td>
+        <td width="80%">Optional. Number of copies to generate. <a href="p_copies.htm">Copies</a>
+        property will be used if this parameter is not indicated.</td>
+      </tr>
+    </table>
+    <hr>
+    <p><font size="4">Examples:</font></p>
+    <pre><font color="#0000FF">*-- Generate the report to a string
+*
+oRep.PrintFormat=&quot;CUSTOMERS.FMT&quot;
+oRep.Run()
+cResult=oRep.<strong>PrintToText</strong>()</font></pre>
+    <hr>
+    <p><font size="4">See also:</font></p>
+    <p><br>
+    <a href="p_senctotext.htm">SendToText</a></td>
+  </tr>
+</table>
+</tr></td></table>
+</body>
+</html>

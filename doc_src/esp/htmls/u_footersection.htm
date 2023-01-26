@@ -1,0 +1,88 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Sección FOOTER</title>
+</head>
+
+<body>
+
+<p><a name="TOP"></a></p>
+
+<p><b><font size="5">Sección FOOTER</font></b><br>
+</p>
+
+<hr>
+
+<p>La sección FOOTER define el texto que se mostrará como pié de cada página. Esta
+sección normalmente contiene información como la hora y fecha del informe, así como el
+nro. de página actual (a través del macro $PAGENO$). Si la propiedad PaperLenght es
+igual a cero (0), esta sección se imprimirá inmediatamente después de la última linea
+de detalle del informe. Si <a href="p_paperlenght.htm">PaperLenght</a> contiene cualquier
+valor diferente de cero, la sección se imprimirá al final de cada página en una
+posición fija.</p>
+
+<hr>
+
+<p><font size="4">Ejemplo:</font></p>
+
+<p>&nbsp;</p>
+
+<pre><font color="#0000FF"># INFBASCLI.FMT
+# Listado básico de clientes
+#
+&lt;config&gt;</font></pre>
+
+<pre><font color="#0000FF">StartConfString=$C10$$COFF$    // 10 CPI sin compresión (80 cols)
+PaperLenght=60
+TopMargin=2
+LeftMargin=5                   // Margen para encuadernación
+&lt;/config&gt;
+
+&lt;macros&gt;
+CSTATUS=proper(STATUS)
+EMPRESA='Tuberias XYZ'
+DIRECCIONEMP='Caracas, Venezuela'
+&lt;/macros&gt;
+
+&lt;header&gt;
+#...+....[....+....[....+....1....+....1....+....1....+....1....+....1....+....1
+[EMPRESA                          ]                   LISTADO BASICO DE CLIENTES
+[DIRECCIONEMP                     ]
+
+CODIGO                NOMBRE                                 STATUS
+====================  ====================================== ==========
+&lt;/header&gt;
+
+&lt;detail&gt;
+[CODIGO            ]  [PROPER(NOMBRE)                      ] [CSTATUS]
+&lt;/detail&gt;
+
+
+<strong>&lt;footer&gt;</strong>
+
+
+[datetime           ]                                                   [pageno]
+<strong>&lt;/footer&gt;</strong></font></pre>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<p>&nbsp;</p>
+
+<p align="center"><a href="index.htm">[Regresar]</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

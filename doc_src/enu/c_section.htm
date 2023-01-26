@@ -1,0 +1,76 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Section Object</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">Section (Object)</font></b> </td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p>Each section in a format file is represented by a <strong>Section</strong>
+    object. This objects are automatically created and added to the <a href="p_sections.htm">Sections</a>
+    collection when a format file is loaded by setting <a href="p_printformat.htm">PrintFormat</a>
+    property. Note that you can change any property of a Section object, but those changes
+    will not be saved to the original format file.<hr>
+    <p><font size="4">Applies to:</font></p>
+    <p><br>
+    <a href="p_sections.htm">Sections collection</a> </p>
+    <hr>
+    <table border="1" width="100%">
+      <tr>
+        <th width="100%" colspan="5">Properties</th>
+      </tr>
+      <tr>
+        <td width="20%"><a href="p_applyif.htm">ApplyIf</a></td>
+        <td width="20%"><a href="p_bandheight.htm">BandHeight</a></td>
+        <td width="20%"><a href="p_integralheight.htm">IntegralHeight</a></td>
+        <td width="20%"><a href="p_macros2.htm">Macros</a></td>
+        <td width="20%"><a href="p_name.htm">Name</a></td>
+      </tr>
+      <tr>
+        <td width="20%"><a href="p_printifblank.htm">PrintIfBlank</a></td>
+        <td width="20%"><a href="p_printonnewpage.htm">PrintOnNewPage</a></td>
+        <td width="20%"><a href="p_resetpagecounter.htm">ResetPageCounter</a></td>
+        <td width="20%"><a href="p_startonnewpage.htm">StartOnNewPage</a></td>
+        <td width="20%"><a href="p_text.htm">Text</a></td>
+      </tr>
+      <tr>
+        <td width="20%"><a href="p_type.htm">Type</a></td>
+        <td width="20%">&nbsp;</td>
+        <td width="20%">&nbsp;</td>
+        <td width="20%">&nbsp;</td>
+        <td width="20%">&nbsp;</td>
+      </tr>
+    </table>
+    <hr>
+    <p><font size="4">Example:</font></p>
+    <pre><font color="#0000FF">*-- Show some info for DETAIL section
+*
+oDP.PrintFormat=&quot;CUSTOMERS.FMT&quot;
+oSection=oDP.Sections.Items(&quot;DETAIL&quot;)
+?<strong>oSection</strong>.Text               --&gt; &quot;[COD] [CUSTNAME              ] [CUSTADDRESS           ]&quot;
+?o<strong>Section</strong>.Type               --&gt; &quot;DETAIL&quot;
+?<strong>oSection</strong>.ApplyIf            --&gt; .T.
+?<strong>oSection</strong>.PrintOnNewPage     --&gt; .F.</font></pre>
+    <hr>
+    <p><font size="4">See also:</font></p>
+    <p><br>
+    <a href="p_sections.htm">Sections</a>, <a href="u_archivosfmt.htm">Format files</a></td>
+  </tr>
+</table>
+</tr></td></table>
+</body>
+</html>

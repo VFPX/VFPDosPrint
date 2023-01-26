@@ -1,0 +1,73 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>PrintToFile Method</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">PrintToFile (Method)</font></b> </td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p><p>Sends the current report to a disk file.<hr>
+    <p><font size="4">Applies to:</font></p>
+    <p><br>
+    <a href="index.htm">DOSPrint class</a></p>
+    <hr>
+    <p><font size="4">Syntax:</font></p>
+    <p><br>
+    Object.PrintToFile(cFileName[,nCopies])</p>
+    <hr>
+    <p><font size="4">Where:</font></p>
+    <table border="1" width="100%">
+      <tr>
+        <td width="20%">Object</td>
+        <td width="80%">Reference to an object of one of the class mentioned in Applies to:</td>
+      </tr>
+      <tr>
+        <td width="20%">cFileName</td>
+        <td width="80%">Name of the disk file to generate. If this file is invalid or the folder
+        does not exists, a runtime error will be generated.</td>
+      </tr>
+      <tr>
+        <td width="20%">nCopies</td>
+        <td width="80%">Optional. Number of copies to generate. <a href="p_copies.htm">Copies</a>
+        property will be used if this parameter is not indicated.</td>
+      </tr>
+    </table>
+    <hr>
+    <p><font size="4">Examples:</font></p>
+    <pre><font color="#0000FF">*-- Generate the report
+*
+oRep.PrintFormat=&quot;CUSTOMERS.FMT&quot;
+oRep.Run()
+
+
+*-- Save the report to a file
+*
+LOCAL cFile
+cFile=GetFile()</font></pre>
+    <pre><font color="#0000FF">IF NOT EMPTY(cFile)</font></pre>
+    <pre><font color="#0000FF"> oRep.<strong>PrintToFile</strong>(cFile)
+ENDIF
+</font></pre>
+    <hr>
+    <p><font size="4">See also:</font></p>
+    <p><br>
+    <a href="m_print.htm">Print</a>, <a href="m_sendtofile.htm">SendToFile</a></td>
+  </tr>
+</table>
+</tr></td></table>
+</body>
+</html>

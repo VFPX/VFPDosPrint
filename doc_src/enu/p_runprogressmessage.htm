@@ -1,0 +1,45 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>RunProgressMessage Property</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">RunProgressMessage (Property)</font></b> </td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p><p>Sets the message showed at the progress window. You can use two special
+    macros in the text asigned to this property:<p>PAGECNT: Current page count.<br>
+    CR: Line feed.</p>
+    <hr>
+    <p><font size="4">Applies to:</font></p>
+    <p><br>
+    <a href="index.htm">DOSPrint class</a> </p>
+    <hr>
+    <p><font size="4">Example:</font></p>
+    <pre><font color="#0000FF">*-- Activates progress window with a custom message
+*
+oDP=CREATEOBJECT(&quot;cDOSPrint&quot;)
+oDP.ShowRunProgress=.T.
+oDP.RunProgressMessage=&quot;Pages so far: %PAGECNT%&quot;</font></pre>
+    <hr>
+    <p><font size="4">See also:</font></p>
+    <p><br>
+    <a href="m_showrunprogress.htm">ShowRunProgress</a></td>
+  </tr>
+</table>
+</tr></td></table>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Sección GROUPS</title>
+</head>
+
+<body>
+
+<p><a name="TOP"></a></p>
+
+<p><b><font size="5">Sección GROUPS</font></b><br>
+</p>
+
+<hr>
+
+<p>La sección GROUPS define los diferentes grupos de control que manejará el informe.
+Cada linea en la sección define un grupo de control mediante la siguiente sintáxis:</p>
+
+<p>&nbsp;</p>
+
+<p>GROUP=Expr | Header | Footer</p>
+
+<p>&nbsp;</p>
+
+<p>donde:</p>
+
+<table border="1" width="60%">
+  <tr>
+    <td width="30%">Expr</td>
+    <td width="70%">Expresión que controlará el salto de grupo. Cuando esta expresión
+    cambie, se producirá una ruptura de control en el grupo.</td>
+  </tr>
+  <tr>
+    <td width="30%">Header</td>
+    <td width="70%">Nombre de una sección personalizada que servirá como encabezado del
+    grupo.</td>
+  </tr>
+  <tr>
+    <td width="30%">Footer</td>
+    <td width="70%">Nombre de una sección personalziada que servirá como pie de grupo.</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>Si el informe maneja varios grupos de control, los mismos serán evaluado en el orden
+en que son definidos en la sección.</p>
+
+<hr>
+
+<p><font size="4">Ejemplo:</font></p>
+
+<p>&nbsp;</p>
+
+<pre><font color="#0000FF"># INFBASCLI.FMT
+# Listado básico de clientes, agrupado por status.
+#
+&lt;config&gt;</font></pre>
+
+<pre><font color="#0000FF">StartConfString=$C10$$COFF$    // 10 CPI sin compresión (80 cols)
+PaperLenght=60
+TopMargin=2
+LeftMargin=5                   // Margen para encuadernación</font></pre>
+
+<pre><font color="#0000FF">EjectBeforeSummary=No
+&lt;/config&gt;
+
+&lt;macros&gt;
+CSTATUS=proper(STATUS)
+EMPRESA='Tuberias XYZ'
+DIRECCIONEMP='Caracas, Venezuela'</font></pre>
+
+<pre><font color="#0000FF">TNUMCLI=TRANS(_COUNT[],&quot;9,999&quot;)          // Nro. de clientes total
+GNUMCLI=TRANS(_COUNT[STATUS],&quot;9,999&quot;)    // Nro. de clientes por status
+&lt;/macros&gt;
+
+<strong>&lt;groups&gt;
+</strong>XSTATUS=STATUS | XTATUS_HDR | XSTATUS_FTR<strong>
+&lt;/groups&gt;</strong>
+
+&lt;header&gt;
+#...+....[....+....[....+....1....+....1....+....1....+....1....+....1....+....1
+[EMPRESA                          ]                   LISTADO BASICO DE CLIENTES
+[DIRECCIONEMP                     ]                                 SEGUN STATUS
+
+CODIGO                NOMBRE                                 STATUS
+====================  ====================================== ==========
+&lt;/header&gt;
+
+<strong>&lt;xstatus_hdr&gt;</strong>
+</font></pre>
+
+<pre><font color="#0000FF">STATUS: $BON$%PROPER(STATUS)%$BOFF$</font></pre>
+
+<pre><font color="#0000FF"><strong>&lt;/xstatus_hdr&gt;
+</strong>
+&lt;detail&gt;
+[CODIGO            ]  [PROPER(NOMBRE)                      ] [CSTATUS]
+&lt;/detail&gt;
+
+</font></pre>
+
+<pre><font color="#0000FF"><strong>&lt;xstatus_ftr&gt;
+</strong></font></pre>
+
+<pre><font color="#0000FF">TOTAL CLIENTES: [GNUMCLI]</font></pre>
+
+<p><font color="#0000FF">&nbsp;</font></p>
+
+<p><font color="#0000FF">&nbsp;</font></p>
+
+<pre><strong><font color="#0000FF">&lt;/xstatus_ftr&gt;</font></strong></pre>
+
+<pre><font color="#0000FF">
+&lt;footer&gt;
+
+
+[datetime           ]                                                   [pageno]
+&lt;/footer&gt;
+
+&lt;summary&gt;
+
+************************
+TOTAL CLIENTES: [NUMCLI]
+************************
+&lt;/summary&gt;</font></pre>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<p>&nbsp;</p>
+
+<p align="center"><a href="index.htm">[Regresar]</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

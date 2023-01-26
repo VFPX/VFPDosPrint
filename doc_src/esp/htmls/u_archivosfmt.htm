@@ -1,0 +1,130 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Archivos de formato para DOSPrint</title>
+</head>
+
+<body>
+
+<p><a name="TOP"></a></p>
+
+<p><b><font size="5">Archivos de formato para DOSPrint</font></b><br>
+Actualizado al: 07-OCT-2001<br>
+</p>
+
+<hr>
+
+<p>Un archivo de formato para DOSPrint es un archivo de texto que contiene la definición
+de un informe DOSPrint. Este archivo de texto contiene la definición de cada una de las
+secciones de un informe, así como la configuración de página a utilizar, los grupos de
+control existentes y los macros a utilizar, el cual luego es utilizado por el método <a
+href="m_run3.htm">Run</a> de un objeto DOSPrint</p>
+
+<p>&nbsp;</p>
+
+<p>Un archivo de formato está compuesto por secciones, algunas de las cuales se
+consideran &quot;fijas&quot;. Cada sección inicia con el tag &lt;SECCION&gt; y termina
+con el tag &lt;/SECCION&gt;. Adicionalmente, toda linea que comienze con el caracter # es
+considerada comentario. Tambien se considera comentario todo texto que siga a los
+caracteres //.</p>
+
+<p>&nbsp;</p>
+
+<p>Las secciones fijas de un archivo de formato son:</p>
+
+<p>&nbsp; 
+
+<ul>
+  <li>Sección <a href="u_configsection.htm">CONFIG</a></li>
+  <li>Sección <a href="u_macrossection.htm">MACROS</a></li>
+  <li>Sección <a href="u_groupssection.htm">GROUPS</a></li>
+  <li>Sección <a href="u_titlesection.htm">TITLE</a></li>
+  <li>Sección <a href="u_headersection.htm">HEADER</a></li>
+  <li>Sección <a href="u_detailsection.htm">DETAIL</a></li>
+  <li>Sección <a href="u_footersection.htm">FOOTER</a></li>
+  <li>Sección <a href="u_summarysection.htm">SUMMARY</a></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>Adicionalmente a estas secciones, se puede crear cualquier sección deseada,
+simplemente usando los tags de inicio y cierre, por ejemplo:</p>
+
+<p>&nbsp;</p>
+
+<pre><font color="#0000FF">&lt;ESPECIAL1&gt;
+Esto es una sección especial dentro de un archivo de formato. El contenido
+de esta sección puede ser impresa a través del método PrintSection() ($DATE$).
+&lt;/ESPECIAL1&gt;
+</font>
+</pre>
+
+<p>Una vez definida la sección en el formato, se utiliza el método <a
+href="m_printsection.htm">PrintSection</a> para imprimir dicha sección.<br>
+</p>
+
+<hr>
+
+<p><font size="4">Ejemplo:</font></p>
+
+<p>&nbsp;</p>
+
+<pre><font color="#0000FF"># INFBASCLI.FMT
+# Listado básico de clientes
+#
+&lt;config&gt;</font></pre>
+
+<pre><font color="#0000FF">StartConfString=$C10$$COFF$    // 10 CPI sin compresión (80 cols)
+PaperLenght=60
+TopMargin=2
+LeftMargin=5                   // Margen para encuadernación
+&lt;/config&gt;
+
+&lt;macros&gt;
+CSTATUS=proper(STATUS)
+EMPRESA='Tuberias XYZ'
+DIRECCIONEMP='Caracas, Venezuela'
+&lt;/macros&gt;
+
+&lt;header&gt;
+#...+....[....+....[....+....1....+....1....+....1....+....1....+....1....+....1
+[EMPRESA                          ]                   LISTADO BASICO DE CLIENTES
+[DIRECCIONEMP                     ]
+
+CODIGO                NOMBRE                                 STATUS
+====================  ====================================== ==========
+&lt;/header&gt;
+
+&lt;detail&gt;
+[CODIGO            ]  [PROPER(NOMBRE)                      ] [CSTATUS]
+&lt;/detail&gt;
+
+
+&lt;footer&gt;
+
+
+[datetime           ]                                                   [pageno]
+&lt;/footer&gt;</font></pre>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<p>&nbsp;</p>
+
+<p align="center"><a href="index.htm">[Regresar]</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

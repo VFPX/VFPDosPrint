@@ -1,0 +1,64 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>RunCallBack Property</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">RunCallBack (Property)</font></b> <br>
+    (only available in registered version and when used inside VFP)</td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p><p>This property lets you to define a VFP function or method to be called at
+    some points inside <a href="m_run.htm">Run</a> method. The function or method indicated
+    here will be called with the following parameters:<p>pnMode: 1=Starting report,
+    2=Processing report, 3=Report finished<br>
+    pnPageCount: Pages generated so far.</p>
+    <hr>
+    <p><font size="4">Applies to:</font></p>
+    <p><br>
+    <a href="index.htm">DOSPrint class</a> </p>
+    <hr>
+    <p><font size="4">Example:</font></p>
+    <pre><font color="#0000FF">*-- Example of a RunCallBack
+*
+oDP=CREATEOBJECT(&quot;cDosPrint&quot;)
+oDP.RunCallBack='MyProgress'
+oDP.PrintFormat='CUSTOMERS.FMT'
+oDp.Run()
+...
+*-- MyProgress
+*   Custom progress message
+*
+PROC MyProgress(pnMode,pnPageCount)
+ DO CASE
+    CASE pnMode=1
+         WAIT WINDOW &quot;Preparing report...&quot; NOWAIT
+    CASE pnMode=2
+         WAIT WINDOW &quot;Printing...(&quot; + ALLT(STR(pnPageCount))+&quot; pages)&quot; WINDOW NOWAIT
+    CASE pnMode=3
+         WAIT CLEAR
+ ENDCASE
+ENDPROC
+</font></pre>
+    <hr>
+    <p><font size="4">See also:</font></p>
+    <p><br>
+    <a href="m_showrunprogress.htm">ShowRunProgress</a></td>
+  </tr>
+</table>
+</tr></td></table>
+</body>
+</html>

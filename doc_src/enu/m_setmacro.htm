@@ -1,0 +1,80 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>SetMacro Method</title>
+</head>
+
+<body topmargin=0 leftmargin=0>
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border=0 cellpadding=0 cellspacing=1 width="100%">
+<tr><td class="title">
+<b><font size="5">SetMacro (Method)</font></b>
+
+</tr></td></table>
+<table class="body" border=0 cellpadding=0 cellspacing=5 width="100%" align="center">
+<tr><td class="body">
+
+
+<p>Changes the expression asociated with a defined macro.</p>
+
+<hr>
+
+<p><font size="4">Applies to:</font></p>
+
+<p><br>
+<a href="index.htm">DOSPrint class</a></p>
+
+<hr>
+
+<p><font size="4">Syntax:</font></p>
+
+<p><br>
+Object.SetMacro(cName,cExpr)</p>
+
+<hr>
+
+<p><font size="4">Where:</font></p>
+
+<table border="1" width="100%">
+  <tr>
+    <td width="20%">Object</td>
+    <td width="80%">Reference to an object of one of the class mentioned in Applies to:</td>
+  </tr>
+  <tr>
+    <td width="20%">cName</td>
+    <td width="80%">Name of the macro (without $ delimiters) to change. If the macro is not
+    defined, no error will be generated.</td>
+  </tr>
+  <tr>
+    <td width="20%">cExpr</td>
+    <td width="80%">New macro expression.</td>
+  </tr>
+</table>
+
+<hr>
+
+<p><font size="4">Examples:</font></p>
+
+<pre><font color="#0000FF">*-- Updates PAGENO macro
+*
+oRep.<strong>SetMacro</strong>(&quot;PAGENO&quot;,nPageNo)
+
+</font></pre>
+
+<hr>
+
+<p><font size="4">See also:</font></p>
+
+<p><br>
+<a href="m_addmacro.htm">AddMacro</a>, <a href="m_getmacro.htm">GetMacro</a>, <a
+href="p_macros.htm">Macros</a></p>
+
+</tr></td></table>
+</tr></td></table>
+</body>
+</html>

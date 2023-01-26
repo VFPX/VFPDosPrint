@@ -1,0 +1,67 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Collections</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">Collections</font></b> </td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p><p>A collection is an object with contains a list of related items.
+    Collections are wide used in DP interface.<hr>
+    <table border="1" width="100%">
+      <tr>
+        <th width="100%" colspan="5">Properties</th>
+      </tr>
+      <tr>
+        <td width="20%"><a href="p_count.htm">Count</a></td>
+        <td width="20%"><a href="p_items.htm">Items[...]</a></td>
+        <td width="20%">&nbsp;</td>
+        <td width="20%">&nbsp;</td>
+        <td width="20%">&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <table border="1" width="100%" height="42">
+      <tr>
+        <th width="100%" height="13" colspan="5">Methods</th>
+      </tr>
+      <tr>
+        <td width="20%" height="1"><a href="m_isitem.htm">IsItem</a></td>
+        <td width="20%" height="1"></td>
+        <td width="20%" height="1"></td>
+        <td width="20%" height="1"></td>
+        <td width="20%" height="1"></td>
+      </tr>
+    </table>
+    <hr>
+    <p><font size="4">Example:</font></p>
+    <pre><font color="#0000FF">*-- Prints text of all sections in a format file
+*
+oDP=CREATEOBJECT(&quot;cDOSPrint&quot;)
+oDP.FormatFile=&quot;CUSTOMERS.FMT&quot;
+FOR i=1 TO oDP.<strong>Sections</strong>.Count
+ ?oDP.<strong>Sections</strong>.Items(i).Text,
+ENDFOR</font></pre>
+    <hr>
+    <p><font size="4">See also:</font></p>
+    <p><br>
+    <a href="m_loadformatsection.htm">LoadFormatSection</a></td>
+  </tr>
+</table>
+</tr></td></table>
+</body>
+</html>

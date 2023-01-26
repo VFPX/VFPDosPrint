@@ -1,0 +1,63 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CONFIG Section</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">CONFIG Section</font></b> </td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p>This section is used to setup any report's options like page size,
+    margins, printer configuration, etc. Each line in this sections must be a Property=Value
+    pair, where <strong>Property</strong> is the name of the class's property to setup and <strong>Value</strong>
+    is the new value of the property. For boolean properties (as AutoEject, EjectAfterTitle,
+    etc), you can use any of the following constants to set its value:<div align="left"><table
+    border="1" width="40%">
+      <tr>
+        <th width="50%" align="left">True</th>
+        <th width="50%" align="left">False</th>
+      </tr>
+      <tr>
+        <td width="50%">True | Yes | .T.</td>
+        <td width="50%">False | No | .F.</td>
+      </tr>
+    </table>
+    </div><p>Note that if a non existing property is indicated in this sections, it will be
+    ignored without generating any error.</p>
+    <hr>
+    <p><font size="4">Example:</font></p>
+    <pre><font color="#0000FF"># CUSTOMERS.FMT
+# Basic customer listing
+#
+<strong>&lt;config&gt;</strong>
+StartConfString=$C10$$COFF$    // Non-condensed 10 CPI (80 cols)
+PaperLenght=60                 // Letter size
+TopMargin=2
+LeftMargin=5
+AutoEject=Yes
+EjectAfterTitle=True
+EjectBeforeSummary=False
+<strong>&lt;/config&gt;</strong>
+</font></pre>
+    </td>
+  </tr>
+  <tr>
+    <td class="body"></td>
+  </tr>
+</table>
+</tr></td></table>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>AddMacro Method</title>
+</head>
+
+<body topmargin=0 leftmargin=0>
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border=0 cellpadding=0 cellspacing=1 width="100%">
+<tr><td class="title">
+<b><font size="5">AddMacro (Method)</font></b>
+
+</tr></td></table>
+<table class="body" border=0 cellpadding=0 cellspacing=5 width="100%" align="center">
+<tr><td class="body">
+
+
+<p>Adds a new macro to the report macro list.</p>
+
+<hr>
+
+<p><font size="4">Applies to:</font></p>
+
+<p><br>
+<a href="index.htm">DOSPrint class</a></p>
+
+<hr>
+
+<p><font size="4">Syntax:</font></p>
+
+<p><br>
+Object.AddMacro(cName,cExpr)</p>
+
+<hr>
+
+<p><font size="4">Where:</font></p>
+
+<table border="1" width="100%">
+  <tr>
+    <td width="20%">Object</td>
+    <td width="80%">Reference to an object of one of the class mentioned in Applies to:</td>
+  </tr>
+  <tr>
+    <td width="20%">cName</td>
+    <td width="80%">Name of the new macro (without $ delimiters). If there was an existing
+    macro with the same name indicated in cName, no error will be generated and the new macro
+    will be appended at the end of the macro list. However, the first definition of any macro
+    any time it is used inside the report.</td>
+  </tr>
+  <tr>
+    <td width="20%">cExpr</td>
+    <td width="80%">Regular expression wich defines the contents of the macro. This expression
+    will be evaluated while printing each report line, to determinate de most current value of
+    the macro. You can also use constant values such as DATE(), TIME(), &quot;Page:&quot;,
+    etc.</td>
+  </tr>
+</table>
+
+<hr>
+
+<p><font size="4">Examples:</font></p>
+
+<pre><font color="#0000FF">*-- #1: Constant macro
+*
+oRep.<strong>AddMacro</strong>(&quot;CUSTNAME&quot;,&quot;XYZ Bookstore, INC&quot;)
+
+</font></pre>
+
+<pre><font color="#0000FF">*-- #2: Dynamic macro
+*
+oRep.<strong>AddMacro</strong>(&quot;CUSTNAME&quot;,&quot;oCustomer.Data.Name&quot;)</font></pre>
+
+<hr>
+
+<p><font size="4">See also:</font></p>
+
+<p><br>
+<a href="m_setmacro.htm">SetMacro</a>, <a href="m_getmacro.htm">GetMacro</a>, <a
+href="p_macros.htm">Macros</a></p>
+
+</tr></td></table>
+</tr></td></table>
+</body>
+</html>

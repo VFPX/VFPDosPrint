@@ -1,0 +1,78 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<TITLE>Propiedad StartConfString</TITLE>
+</head>
+
+<body>
+
+<p><b><font size="5">StartConfString (Propiedad)</font></b></p>
+
+<hr>
+
+<p>Permite establecer la cadena que se enviará a la impresora al iniciar el informe. Esta
+cadena puede contener los códigos necesarios para configurar la impresora según las
+necesidades del informe. Dentro de esta propiedad puede utilizar las siguientes macros
+predefinidas:</p>
+
+<p>&nbsp;</p>
+
+<table border="1" width="40%">
+  <tr>
+    <td width="15%" align="middle">$C10$</td>
+    <td width="85%">Configurar la impresora a 10 CPI</td>
+  </tr>
+  <tr>
+    <td width="15%" align="middle">$C12$</td>
+    <td width="85%">Configurar la impresora a 12 CPI</td>
+  </tr>
+  <tr>
+    <td width="15%" align="middle">$CON$</td>
+    <td width="85%">Activar la compresión</td>
+  </tr>
+  <tr>
+    <td width="15%" align="middle">$COFF$</td>
+    <td width="85%">Desactivar la compresión</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<p><font size="4">Aplica a:</font></p>
+
+<p><br>
+<A href="c_dosprint.htm">Clase DOSPrint</a></p>
+
+<hr>
+
+<p><font size="4">Ejemplo(s):</font></p>
+
+<pre><font color="#0000ff">*-- Se configura el informe para que imprima a 12 CPI
+*
+#DEFOBJ oRep AS DOSPrint
+oRep.PaperLenght:=60</font></pre>
+
+<pre><font color="#0000ff">oRep.<strong>StartConfString</strong>:=$C12$
+...
+</font></pre>
+
+<hr>
+
+<p><font size="4">Ver también:</font></p>
+
+<p>&nbsp;</p>
+
+<p><A href="p_ejectstring.htm">EjectString</a>, <A href="p_newpageconfstring.htm">NewPageConfString</a></p>
+
+<hr>
+
+<p align="center"><A href="index.htm">[Regresar]</a></p>
+</body>
+</html>

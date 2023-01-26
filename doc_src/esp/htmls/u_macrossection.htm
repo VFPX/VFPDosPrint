@@ -1,0 +1,178 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Sección MACROS</title>
+</head>
+
+<body>
+
+<p><a name="TOP"></a></p>
+
+<p><b><font size="5">Sección MACROS</font></b><br>
+</p>
+
+<hr>
+
+<p>La sección MACROS define los diferentes macros que estarán disponibles en el informe.
+Cada linea en la sección corresponde a un par del tipo Macro=Expresión, donde Macro
+corresponde al nombre del macro y Expresión a la expresión o constante que define el
+macro. Una definición de macro puede tener diferentes sintáxis:<br>
+<br>
+</p>
+
+<table border="1" width="60%">
+  <tr>
+    <th width="30%">Tipo</th>
+    <th width="70%">Ejemplo</th>
+  </tr>
+  <tr>
+    <td width="30%">Constante</td>
+    <td width="70%">EMPRESA='Tuberias XYZ'<br>
+    PI=3.1416</td>
+  </tr>
+  <tr>
+    <td width="30%">Expresión simple</td>
+    <td width="70%">CSTATUS=PROPER(QClientes.STATUS)</td>
+  </tr>
+  <tr>
+    <td width="30%">Expresión expandible</td>
+    <td width="70%">CSTATUS='Status actual: %QClientes.Status%'</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>Adicionalmente, una definición de macro puede ser usada para realizar operaciones de
+acumulación, estadística o conteo. La clase DOSPrint reconoce las siguientes funciones
+de acumulación:<br>
+<br>
+</p>
+
+<table border="1" width="80%">
+  <tr>
+    <th width="15%">Función</th>
+    <th width="30%">Parámetros</th>
+    <th width="55%">Ejemplo</th>
+  </tr>
+  <tr>
+    <td width="15%">_SUM<br>
+    </td>
+    <td width="30%">nExpr: Valor a sumar<br>
+    cReset: Reiniciar el acumulador cuando este valor cambie.<br>
+    nInitVal: Valor inicial</td>
+    <td width="55%">TMONTO=_SUM[MONTO;CODCAJA;0.0]</td>
+  </tr>
+  <tr>
+    <td width="15%">_MIN<br>
+    </td>
+    <td width="30%">nExpr: Valor a comparar<br>
+    cReset: Reiniciar el acumulador cuando este valor cambie.<br>
+    nInitVal: Valor inicial</td>
+    <td width="55%">TMINPAGO=_MIN[MONTO;CODCAJA]</td>
+  </tr>
+  <tr>
+    <td width="15%">_MAX<br>
+    </td>
+    <td width="30%">nExpr: Valor a comparar<br>
+    cReset: Reiniciar el acumulador cuando este valor cambie.<br>
+    nInitVal: Valor inicial</td>
+    <td width="55%">TMAXPAGO=_MAX[MONTO;CODCAJA]</td>
+  </tr>
+  <tr>
+    <td width="15%">_AVG<br>
+    </td>
+    <td width="30%">nExpr: Valor a comparar<br>
+    cReset: Reiniciar el acumulador cuando este valor cambie.<br>
+    nInitVal: Valor inicial</td>
+    <td width="55%">TPAGOPROM=_AVG[MONTO;CODCAJA]</td>
+  </tr>
+  <tr>
+    <td width="15%">_COUNT</td>
+    <td width="30%">cReset: Reiniciar el contador cuando este valor cambie.<br>
+    nInitVal: Valor inicial</td>
+    <td width="55%">TNUMPAGOS=_COUNT[CODCAJA]</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>En cada caso, si no se indica el parámetro cReset, la operación se realizará hasta
+el final del informe. Si se desea realizar un cálculo que se reinicie en cada página,
+utilize la constante PAGENO como valor para cReset. </p>
+
+<hr>
+
+<p><font size="4">Ejemplo:</font></p>
+
+<p>&nbsp;</p>
+
+<pre><font color="#0000FF"># INFBASCLI.FMT
+# Listado básico de clientes
+#
+&lt;config&gt;</font></pre>
+
+<pre><font color="#0000FF">StartConfString=$C10$$COFF$    // 10 CPI sin compresión (80 cols)
+PaperLenght=60
+TopMargin=2
+LeftMargin=5                   // Margen para encuadernación</font></pre>
+
+<pre><font color="#0000FF">EjectBeforeSummary=No
+&lt;/config&gt;
+
+<strong>&lt;macros&gt;</strong>
+CSTATUS=proper(STATUS)
+EMPRESA='Tuberias XYZ'
+DIRECCIONEMP='Caracas, Venezuela'</font></pre>
+
+<pre><font color="#0000FF">NUMEMP=TRANS(_COUNT[],&quot;9,999&quot;)
+<strong>&lt;/macros&gt;</strong>
+
+&lt;header&gt;
+#...+....[....+....[....+....1....+....1....+....1....+....1....+....1....+....1
+[EMPRESA                          ]                   LISTADO BASICO DE CLIENTES
+[DIRECCIONEMP                     ]
+
+CODIGO                NOMBRE                                 STATUS
+====================  ====================================== ==========
+&lt;/header&gt;
+
+&lt;detail&gt;
+[CODIGO            ]  [PROPER(NOMBRE)                      ] [CSTATUS]
+&lt;/detail&gt;
+
+
+&lt;footer&gt;
+
+
+[datetime           ]                                                   [pageno]
+&lt;/footer&gt;
+
+&lt;summary&gt;
+
+************************
+TOTAL CLIENTES: [NUMCLI]
+************************
+&lt;/summary&gt;</font></pre>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<p>&nbsp;</p>
+
+<p align="center"><a href="index.htm">[Regresar]</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

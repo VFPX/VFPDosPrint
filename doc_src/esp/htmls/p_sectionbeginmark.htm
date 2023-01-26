@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><LINK href="style1.css"
+type=text/css rel=stylesheet>
+<META http-equiv=Content-Language content=es-ve>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId></HEAD>
+<body>
+<p><b><font size=5>SectionBeginMark(Propiedad)</font></b></p>
+<hr>
+
+<p>Permite establecer la cadena de caracteres que se tomará
+como inicio de sección en un <A href="u_archivos.fmt" >archivo de formato</A>. Esto es útil cuando se
+utiliza DOSPrint para generar documentos con formato, tales como HTML, XML,
+etc.</p>
+<P>El valor por defecto de esta propiedad es "&lt;".</P>
+<hr>
+
+<p><font size=4>Ejemplo(s):</font></p>
+<pre><font color=#0000ff>
+&lt;config&gt;
+<strong>SectionBeginMark</strong>='['
+SectionEndMark=']'
+&lt;/config&gt;
+
+[header]
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;Prueba&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+[/header]
+
+[summary]
+&lt;/body&gt;
+&lt;/html&gt;
+[/summary]
+</font></pre><PRE>
+<hr></PRE>
+
+<p><font size=4>Ver
+también:</font></p>
+<A href="p_sectionendmark.htm" >SectionEndMark</A>
+</body></HTML>

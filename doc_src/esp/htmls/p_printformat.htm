@@ -1,0 +1,46 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<TITLE>Propiedad PrintFormat</TITLE>
+</head>
+
+<body>
+
+<p><b><font size="5">PrintFormat (Propiedad)</font></b></p>
+
+<hr>
+
+<p>Permite indicar el nombre del <A href="u_archivosfmt.htm">archivo de formato</a> a
+utilizar para el informe. El uso de los archivos de formato en conjunto con el método
+Run() constituyen la forma más fácil de generar informes de texto usando la clase
+DOSPrint.</p>
+
+<hr>
+
+<p><font size="4">Ejemplo(s):</font></p>
+
+<pre><font color="#0000ff">*-- Se genera el informe básico de clientes</font></pre>
+
+<pre><font color="#0000ff">*
+#DEFOBJ oRep AS DOSPrint
+oRep.<strong>PrintFormat</strong>:="INFBASCLI.FMT"
+oRep.Run("QCLIENTES")
+oRep.Print()
+#UNDEFOBJ oRep</font></pre>
+
+<p><font color="#0000ff"></font>&nbsp;</p>
+
+<hr>
+
+<p><font size="4">Ver también:</font></p>
+
+<p>&nbsp;</p>
+
+<p><A href="m_run3.htm">Run</a>, <A href="u_archivosfmt.htm">Archivos de formato</a></p>
+</body>
+</html>

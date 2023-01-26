@@ -1,0 +1,240 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MACROS Section</title>
+</head>
+
+<body topmargin=0 leftmargin=0>
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border=0 cellpadding=0 cellspacing=1 width="100%">
+<tr><td class="title">
+<b><font size="5">MACROS Section</font></b>
+
+</tr></td></table>
+<table class="body" border=0 cellpadding=0 cellspacing=5 width="100%" align="center">
+<tr><td class="body">
+
+
+<p>This section is used to define all macros used in the report. Each line inside the
+section defines a macro. using the following syntax:</p>
+
+<p>Macro=Expression</p>
+
+<p>where <strong>Macro</strong> is the name of the macro to be defined, and <strong>Expression</strong>
+is the expression that defines the value of the macro. This expression is evaluated for
+each record in the dataset. In fact, there are three diferent types of macros:</p>
+
+<table border="1" width="60%">
+  <tr>
+    <th width="30%">Type</th>
+    <th width="70%">Example</th>
+  </tr>
+  <tr>
+    <td width="30%">Constant macro</td>
+    <td width="70%">COMPANY='Tuberias XYZ'<br>
+    PI=3.1416</td>
+  </tr>
+  <tr>
+    <td width="30%">Simple expression macro</td>
+    <td width="70%">CSTATUS=PROPER(QCustomers.STATUS)</td>
+  </tr>
+  <tr>
+    <td width="30%">Expandible expression macro</td>
+    <td width="70%">CSTATUS='Current status: %QCustomers.Status%'</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>DOSPrint class automatically defines the following macros:</p>
+<div align="left">
+
+<table border="1" width="60%">
+  <tr>
+    <th width="20%">Macro</th>
+    <th width="80%">Contents</th>
+  </tr>
+  <tr>
+    <td width="20%">PAGENO</td>
+    <td width="80%">Current page number</td>
+  </tr>
+  <tr>
+    <td width="20%">DATE</td>
+    <td width="80%">Current date</td>
+  </tr>
+  <tr>
+    <td width="20%">TIME</td>
+    <td width="80%">Current time</td>
+  </tr>
+  <tr>
+    <td width="20%">DATETIME</td>
+    <td width="80%">Current date/time.</td>
+  </tr>
+  <tr>
+    <td width="20%">BON</td>
+    <td width="80%">Bold ON (ESC/P)</td>
+  </tr>
+  <tr>
+    <td width="20%">BOFF</td>
+    <td width="80%">Bold OFF (ESC/P)</td>
+  </tr>
+  <tr>
+    <td width="20%">CON</td>
+    <td width="80%">Condensed mode ON (ESC/P)</td>
+  </tr>
+  <tr>
+    <td width="20%">COFF</td>
+    <td width="80%">Condensed mode OFF (ESC/P)</td>
+  </tr>
+  <tr>
+    <td width="20%">C10</td>
+    <td width="80%">Set 10 cpi pitch (ESC/P)</td>
+  </tr>
+  <tr>
+    <td width="20%">C12</td>
+    <td width="80%">Set 12 cpi pitch (ESC/P)</td>
+  </tr>
+  <tr>
+    <td width="20%">CRLF</td>
+    <td width="80%">Line feed + Carrier return</td>
+  </tr>
+  <tr>
+    <td width="20%">TAB</td>
+    <td width="80%">Tabulator</td>
+  </tr>
+</table>
+</div>
+
+<p>&nbsp;</p>
+
+<p>DOSPrint macros can also be used to store the result of aggregate functions such SUM or
+COUNT. DOSprint supports the following aggregate functions:</p>
+
+<table border="1" width="90%">
+  <tr>
+    <th width="10%">Function</th>
+    <th width="55%">Parameters</th>
+    <th width="35%">Example</th>
+  </tr>
+  <tr>
+    <td width="10%">_SUM<br>
+    </td>
+    <td width="55%">nExpr: Value to accumulate.<br>
+    cReset: Resets the operation when this expression changes.<br>
+    nInitVal: Initial value.</td>
+    <td width="35%">TAMOUNT=_SUM[AMOUNT;CODDEPT;0.0]</td>
+  </tr>
+  <tr>
+    <td width="10%">_MIN<br>
+    </td>
+    <td width="55%">nExpr: Expression to compare<br>
+    cReset: Resets the operation when this expression changes.<br>
+    nInitVal: Initial value.</td>
+    <td width="35%">TMIN=_MIN[AMOUNT;CODDEPT]</td>
+  </tr>
+  <tr>
+    <td width="10%">_MAX<br>
+    </td>
+    <td width="55%">nExpr: Expression to compare<br>
+    cReset: Resets the operation when this expression changes.<br>
+    nInitVal: Initial value.</td>
+    <td width="35%">TMAX=_MAX[AMOUNT;CODDEPT]</td>
+  </tr>
+  <tr>
+    <td width="10%">_AVG<br>
+    </td>
+    <td width="55%">nExpr: Expression to compare<br>
+    cReset: Resets the operation when this expression changes.<br>
+    nInitVal: Initial value.</td>
+    <td width="35%">TAVG=_AVG[AMOUNT;CODDEPT]</td>
+  </tr>
+  <tr>
+    <td width="10%">_COUNT</td>
+    <td width="55%">cReset: Resets the counter when this expression changes.<br>
+    nInitVal: Initial value.</td>
+    <td width="35%">TNUMPAGOS=_COUNT[CODCAJA]</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>In any case, if cReset parameter is missing, the aggregate operation will continue
+until the end of the report. If you need to reset an aggregate operation on every page,
+use <strong>PAGENO</strong> macro as cReset parameter.</p>
+
+<hr>
+
+<p><font size="4">Example:</font></p>
+
+<pre><font color="#0000FF"># CUSTOMERS.FMT
+# Customer listing grouped by status.
+#
+&lt;config&gt;
+StartConfString=$C10$$COFF$    
+PaperLenght=60
+TopMargin=2
+LeftMargin=5
+EjectBeforeSummary=No
+&lt;/config&gt;
+
+<strong>&lt;macros&gt;</strong>
+CSTATUS=proper(STATUS)
+COMPNAME='XYZ Bookstore'
+COMPADDRESS='Caracas, Venezuela'
+TCOUNT=TRANS(_COUNT[],&quot;9,999&quot;)          // Total customer count
+GCOUNT=TRANS(_COUNT[STATUS],&quot;9,999&quot;)    // Customer count for current status
+<strong>&lt;/macros&gt;</strong>
+
+&lt;groups&gt;<strong>
+</strong>XSTATUS=STATUS | XTATUS_HDR | XSTATUS_FTR<strong>
+</strong>&lt;/groups&gt;
+
+&lt;header&gt;
+#...+....[....+....[....+....1....+....1....+....1....+....1....+....1....+....1
+[COMPNAME                         ]                             CUSTOMER LISTING
+[COMPADDRESS                      ]                                 BY STATUS
+
+CUSTOMER ID           CUSTOMER NAME
+====================  ======================================
+&lt;/header&gt;
+
+&lt;xstatus_hdr&gt;
+
+STATUS: $BON$%PROPER(STATUS)%$BOFF$
+&lt;/xstatus_hdr&gt;<strong>
+</strong>
+&lt;detail&gt;
+[CUSTID            ]  [PROPER(CUSTNAME)                    ]
+&lt;/detail&gt;
+
+<strong>
+</strong>&lt;xstatus_ftr&gt;<strong>
+</strong>
+CUSTOMER COUNT: [GCOUNT ]
+</font>
+<font
+color="#0000FF"><strong>
+</strong>&lt;/xstatus_ftr&gt;<strong>
+</strong>
+&lt;footer&gt;
+
+
+[datetime           ]                                                   [pageno]
+&lt;/footer&gt;
+
+&lt;summary&gt;
+
+*******************************
+TOTAL CUSTOMER COUNT: [TCOUNT ]
+*******************************
+&lt;/summary&gt;</font></pre>
+
+</tr></td></table>
+</tr></td></table>
+</body>
+</html>

@@ -18,24 +18,25 @@ oDP.DetailString="[CUSTID] [CUSTNAME              ] [CUSTSTAT]"
 oDP.FooterString="$DATETIME$                        $PAGENO$"
 
 
-* Generando reporte (version legacy)
+* Generate report (legacy version)
+*!*	SELECT 0
+*!*	USE Customers
+*!*	SCAN
+*!*		oDP.printSection("DETAIL")
+*!*	ENDSCAN
+*!*	USE IN customers
+
+
+* Generate report (recommended method)
 SELECT 0
-USE Customers
-SCAN
-	oDP.printSection("DETAIL")
-ENDSCAN
+USE customers
+oDP.Run()
 USE IN customers
 
+oDP.PrintToFile("DP.OUT")
+MODIFY FILE DP.OUT
 
-* Generando reporte (recomendada)
-* SELECT 0
-* USE customers
-* oDP.Run()
-* USE IN customers
-
-
-oDP.PrintToFile("customers3.txt") 
-
+* oDP.Print( GetPrinter() )   && Uncomment this to send the output to a selected printer
 
 RETURN
 

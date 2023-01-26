@@ -1,0 +1,369 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="$ variable expansion">
+		<param name="Name" value="StrExpand Method">
+		<param name="Local" value="m_strexpand.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="% variable expansion">
+		<param name="Name" value="StrExpand Method">
+		<param name="Local" value="m_strexpand.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value=".FMT Format files">
+		<param name="Name" value="Archivos de formato para DOSPrint">
+		<param name="Local" value="u_archivosfmt.htm">
+		<param name="URL" value="u_archivosfmt.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="[] variable expansion">
+		<param name="Name" value="StrExpand Method">
+		<param name="Local" value="m_strexpand.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="_AVG aggregate function">
+		<param name="Name" value="MACROS Section">
+		<param name="Local" value="u_macrossection.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="_COUNT aggregate function">
+		<param name="Name" value="MACROS Section">
+		<param name="Local" value="u_macrossection.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="_MAX aggregate function">
+		<param name="Name" value="MACROS Section">
+		<param name="Local" value="u_macrossection.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="_MIN aggregate function">
+		<param name="Name" value="MACROS Section">
+		<param name="Local" value="u_macrossection.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="_SUM aggregate function">
+		<param name="Name" value="MACROS Section">
+		<param name="Local" value="u_macrossection.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="AddMacro (Method)">
+		<param name="Name" value="AddMacro Method">
+		<param name="Local" value="m_addmacro.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Format files">
+		<param name="Name" value="Archivos de formato para DOSPrint">
+		<param name="Local" value="u_archivosfmt.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Page configuration">
+			<param name="Name" value="CONFIG Section">
+			<param name="Local" value="u_configsection.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Macro declaration">
+			<param name="Name" value="MACROS Section">
+			<param name="Local" value="u_macrossection.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Control group declaration">
+			<param name="Name" value="GROUPS Section">
+			<param name="Local" value="u_groupssection.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Title page">
+			<param name="Name" value="TITLE Section">
+			<param name="Local" value="u_objectmodel.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Page header">
+			<param name="Name" value="HEADER Section">
+			<param name="Local" value="u_headersection.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Print details">
+			<param name="Name" value="DETAIL Section">
+			<param name="Local" value="u_detailsection.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Page footer">
+			<param name="Name" value="FOOTER Section">
+			<param name="Local" value="u_footersection.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Summary page">
+			<param name="Name" value="SUMMARY Section">
+			<param name="Local" value="u_summarysection.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Running a format">
+			<param name="Name" value="Run Method">
+			<param name="Local" value="m_run.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="AutoEject (Property)">
+		<param name="Name" value="AutoEject Property">
+		<param name="Local" value="p_autoeject.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="BottomMargin (Property)">
+		<param name="Name" value="BottomMargin Property">
+		<param name="Local" value="p_bottommargin.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Clear (Method)">
+		<param name="Name" value="Clear Method">
+		<param name="Local" value="m_clear.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="CONFIG, format file section">
+		<param name="Name" value="CONFIG Section">
+		<param name="Local" value="u_configsection.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DetailString (Property)">
+		<param name="Name" value="DetailString Property">
+		<param name="Local" value="p_detailstring.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DETAIL, format file section">
+		<param name="Name" value="DETAIL Section">
+		<param name="Local" value="u_detailsection.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Eject (Method)">
+		<param name="Name" value="Eject Method">
+		<param name="Local" value="m_eject.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EjectAfterTitle (Property)">
+		<param name="Name" value="EjectAfterTitle Property">
+		<param name="Local" value="p_ejectaftertitle.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EjectBeforeSummary (Property)">
+		<param name="Name" value="EjectBeforeSummary Property">
+		<param name="Local" value="p_ejectbeforesummary.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EjectString (Property)">
+		<param name="Name" value="EjectString Property">
+		<param name="Local" value="p_ejectstring.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EndGroups (Method)">
+		<param name="Name" value="EndGroups Method">
+		<param name="Local" value="m_endgroups.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvalGroups (Method)">
+		<param name="Name" value="EvalGroups Method">
+		<param name="Local" value="m_evalgroups.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="FooterString (Property)">
+		<param name="Name" value="FooterString Property">
+		<param name="Local" value="p_footerstring.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="FOOTER, format file section">
+		<param name="Name" value="FOOTER Section">
+		<param name="Local" value="u_footersection.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetFormatSection (Method)">
+		<param name="Name" value="GetFormatSection Method">
+		<param name="Local" value="m_getformatsection.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetMacro (Method)">
+		<param name="Name" value="GetMacro Method">
+		<param name="Local" value="m_getmacro.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GROUPS, format file section">
+		<param name="Name" value="GROUPS Section">
+		<param name="Local" value="u_groupssection.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="HeaderString (Property)">
+		<param name="Name" value="HeaderString Property">
+		<param name="Local" value="p_headerstring.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="HEADER, format file section">
+		<param name="Name" value="HEADER Section">
+		<param name="Local" value="u_headersection.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="LeftMargin (Property)">
+		<param name="Name" value="LeftMargin Property">
+		<param name="Local" value="p_leftmargin.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="LineNo (Property)">
+		<param name="Name" value="LineNo Property">
+		<param name="Local" value="p_lineno.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Macros (Property)">
+		<param name="Name" value="Macros Property">
+		<param name="Local" value="p_macros.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="MACROS, format file section">
+		<param name="Name" value="MACROS Section">
+		<param name="Local" value="u_macrossection.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="NewPageConfString (Property)">
+		<param name="Name" value="NewPageConfString Property">
+		<param name="Local" value="p_newpageconfstring.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="OnNewPage (Property)">
+		<param name="Name" value="OnNewPage Property">
+		<param name="Local" value="p_onnewpage.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="PageNo (Property)">
+		<param name="Name" value="PageNo Property">
+		<param name="Local" value="p_pageno.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="PaperLenght (Property)">
+		<param name="Name" value="PaperLenght Property">
+		<param name="Local" value="p_paperlenght.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Print (Method)">
+		<param name="Name" value="Print Method">
+		<param name="Local" value="m_print.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="PrintFormat (Property)">
+		<param name="Name" value="PrintFormat Property">
+		<param name="Local" value="p_printformat.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="PrintJobName (Property)">
+		<param name="Name" value="PrintJobName Property">
+		<param name="Local" value="p_printjobname.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="PrintSection (Method)">
+		<param name="Name" value="PrintSection Method">
+		<param name="Local" value="m_printsection.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="PrintToFile (Method)">
+		<param name="Name" value="PrintToFile Method">
+		<param name="Local" value="m_printtofile.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Run (Method)">
+		<param name="Name" value="Run Method">
+		<param name="Local" value="m_run.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SectionHeight (Method)">
+		<param name="Name" value="SectionHeight Method">
+		<param name="Local" value="m_sectionheight.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetMacro (Method)">
+		<param name="Name" value="SetMacro Method">
+		<param name="Local" value="m_setmacro.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="StartConfString (Property)">
+		<param name="Name" value="StartConfString Property">
+		<param name="Local" value="p_startconfstring.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="StartGroups (Method)">
+		<param name="Name" value="StartGroups Method">
+		<param name="Local" value="m_startgroups.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="StrExpand (Method)">
+		<param name="Name" value="StrExpand Method">
+		<param name="Local" value="m_strexpand.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SummaryString (Property)">
+		<param name="Name" value="SummaryString Property">
+		<param name="Local" value="p_summarystring.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SUMMARY, format file section">
+		<param name="Name" value="SUMMARY Section">
+		<param name="Local" value="u_summarysection.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="TitleString (Property)">
+		<param name="Name" value="TitleString Property">
+		<param name="Local" value="p_titlestring.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="TITLE, format file section">
+		<param name="Name" value="TITLE Section">
+		<param name="Local" value="u_titlesection.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="TopMargin (Property)">
+		<param name="Name" value="TopMargin Property">
+		<param name="Local" value="p_topmargin.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Using macros">
+		<param name="Name" value="MACROS Section">
+		<param name="Local" value="u_macrossection.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Constant macros">
+			<param name="Name" value="MACROS Section">
+			<param name="Local" value="u_macrossection.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Runtime macro declaration">
+			<param name="Name" value="AddMacro Method">
+			<param name="Local" value="m_addmacro.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Change a macro declaration">
+			<param name="Name" value="SetMacro Method">
+			<param name="Local" value="m_setmacro.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="List declared macros">
+			<param name="Name" value="Macros Property">
+			<param name="Local" value="p_macros.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Retrieve macro expression">
+			<param name="Name" value="GetMacro Method">
+			<param name="Local" value="m_getmacro.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Write (Method)">
+		<param name="Name" value="Write Method">
+		<param name="Local" value="m_write.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="WriteLn (Method)">
+		<param name="Name" value="WriteLn Method">
+		<param name="Local" value="m_writeln.htm">
+		</OBJECT>
+</UL>
+</BODY></HTML>

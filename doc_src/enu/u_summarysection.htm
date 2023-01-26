@@ -1,0 +1,81 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>SUMMARY Section</title>
+</head>
+
+<body topmargin=0 leftmargin=0>
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border=0 cellpadding=0 cellspacing=1 width="100%">
+<tr><td class="title">
+<b><font size="5">SUMMARY Section</font></b>
+
+</tr></td></table>
+<table class="body" border=0 cellpadding=0 cellspacing=5 width="100%" align="center">
+<tr><td class="body">
+
+
+<p>Defines the text to be printed at the end of the report. The contents of this section
+is printed once at the end of the report. If <a href="p_ejectbeforesummary.htm">EjectBeforeSummary</a>
+is setted to <strong>True</strong>, a page break will be generated before printing this
+section.</p>
+
+<hr>
+
+<p><font size="4">Example:</font></p>
+
+<pre><font color="#0000FF"># CUSTOMERS.FMT
+# Basic customer report
+#
+&lt;config&gt;
+StartConfString=$C10$$COFF$    // 10 CPI not condensed (80 cols)
+PaperLenght=60
+TopMargin=2
+LeftMargin=5                 
+EjectBeforeSummary=False
+&lt;/config&gt;
+
+&lt;macros&gt;
+CSTATUS=proper(STATUS)
+COMPNAME='XYZ Bookstore'
+COMPADDRESS='Caracas, Venezuela'
+TCOUNT=TRANS(_COUNT[],&quot;9,999&quot;)        
+&lt;/macros&gt;
+
+&lt;header&gt;
+#...+....[....+....[....+....1....+....1....+....1....+....1....+....1....+....1
+[COMPNAME                         ]                                CUSTOMER LIST
+[COMPADDRESS                      ]
+
+CUSTOMER ID           CUSTOMER NAME                          STATUS
+====================  ====================================== ==========
+&lt;/header&gt;
+
+&lt;detail&gt;
+[COD               ]  [PROPER(CUSTNAME)                    ] [CSTATUS]
+&lt;/detail&gt;
+
+
+&lt;footer&gt;
+
+
+[datetime           ]                                                   [pageno]
+&lt;/footer&gt;
+
+<strong>&lt;summary&gt;</strong>
+
+**************************************
+TOTAL CUSTOMER COUNT: [TCOUNT    ]
+<strong>&lt;/summary&gt;</strong></font></pre>
+
+<p>&nbsp;</p>
+
+</tr></td></table>
+</tr></td></table>
+</body>
+</html>

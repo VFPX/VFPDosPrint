@@ -1,0 +1,43 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Events Collection</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">Events (Collection)</font></b> </td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p><p>A <a href="c_collection.htm">collection</a> of <a href="c_event.htm">Event</a>
+    objects. Each item in the collection describes an event section in the current <a
+    href="u_archivosfmt.htm">format file</a>.<hr>
+    <p><font size="4">Applies to:</font></p>
+    <p><br>
+    <a href="index.htm">DOSPrint class</a> </p>
+    <hr>
+    <p><font size="4">Example:</font></p>
+    <pre><font color="#0000FF">*-- Show all events in the current format file
+*
+oDP=CREATEOBJECT(&quot;cDOSPrint&quot;)
+oDP.FormatFile=&quot;CUSTOMERS.FMT&quot;
+FOR i=1 TO oDP.<strong>Events</strong>.Count
+ ?oDP.<strong>Events</strong>.Items(i).Name
+ENDFOR</font></pre>
+    </td>
+  </tr>
+</table>
+</tr></td></table>
+</body>
+</html>

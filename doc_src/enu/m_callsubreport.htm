@@ -1,0 +1,68 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CallSubReport Method</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">CallSubReport (Method)</font></b> <br>
+    (registered version only)</td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p>Runs a given format file as a subreport. A subreport is a <a
+    href="u_archivosfmt.htm">format file</a> wich is executed and its results returned as a
+    string. This string is then inserted in the calling format file.<hr>
+    <p><font size="4">Applies to:</font></p>
+    <p><br>
+    <a href="index.htm">DOSPrint class</a></p>
+    <hr>
+    <p><font size="4">Syntax:</font></p>
+    <p><br>
+    Object.CallSubReport(cFormatFile)</p>
+    <hr>
+    <p><font size="4">Where:</font></p>
+    <table border="1" width="100%">
+      <tr>
+        <td width="20%">Object</td>
+        <td width="80%">Reference to an object of one of the class mentioned in Applies to:</td>
+      </tr>
+      <tr>
+        <td width="20%">cFormatFile</td>
+        <td width="80%">Name of the format file to be executed.</td>
+      </tr>
+    </table>
+    <hr>
+    <p><font size="4">Examples:</font></p>
+    <pre><font color="#0000FF"># Syntax #1: Using CallSubReport method.
+&lt;summary&gt;
+
+%DP.CallSubReport('MySummary.FMT')%
+&lt;/summary&gt;
+
+
+# Syntax #2: Using special command #SUBREP
+&lt;summary&gt;
+
+#SUBREP MySummary.FMT
+&lt;/summary&gt;</font></pre>
+    <hr>
+    <p><font size="4">See also:</font></p>
+    <p><br>
+    <a href="m_archivosfmt.htm">Format files</a></td>
+  </tr>
+</table>
+</tr></td></table>
+</body>
+</html>

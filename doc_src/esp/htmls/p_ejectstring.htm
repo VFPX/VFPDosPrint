@@ -1,0 +1,44 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<TITLE>Propiedad EjectString</TITLE>
+</head>
+
+<body>
+
+<p><b><font size="5">EjectString (Propiedad)</font></b></p>
+
+<hr>
+
+<p>Permite establecer la cadena que se utilizará para producir un salto de página. El
+valor por defecto de esta propiedad es el caracter 12 (CHAR 12). Al configurar esta
+propiedad, se puede utilizar la constante especial $CRLF$ que representa un salto de linea
+(ver ejemplo).</p>
+
+<hr>
+
+<p><font size="4">Ejemplo(s):</font></p>
+
+<pre><font color="#0000ff">*-- Se configura el reporte para que avance 4 lineas cuando salte de página.
+*
+#DEFOBJ oRep AS DOSPrint
+oRep.PaperLenght:=20</font></pre>
+
+<pre><font color="#0000ff">oRep.<strong>EjectString</strong>:=REPLICATE($CRLF$,4)
+...
+</font></pre>
+
+<hr>
+
+<p><font size="4">Ver también:</font></p>
+
+<p>&nbsp;</p>
+
+<p><A href="p_startconfstring.htm">StartConfString</a>, <A href="p_newpageconfstring.htm">NewPageConfString</a></p>
+</body>
+</html>

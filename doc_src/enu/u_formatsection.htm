@@ -1,0 +1,91 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>FORMAT Section</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">FORMAT Section</font></b> </td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p>This section is designed as a simplified way to define the basic layout
+    of a report. Each line inside this sections starts with a two-chars code, followed by a
+    ':'&nbsp; and a space char,&nbsp; wich defines the layout section the line belongs to.
+    Note that if you use this section inside you format file, you can not use the normal
+    layout sections, as <strong>Header</strong>, <strong>Detail</strong>, etc. <p>This is the
+    list of two-chars codes and the layout sections associated:</p>
+    <div align="left"><table border="1" width="40%">
+      <tr>
+        <th width="20%">Code</th>
+        <th width="80%">Associated section</th>
+      </tr>
+      <tr>
+        <td width="20%">ti:</td>
+        <td width="80%">TITLE</td>
+      </tr>
+      <tr>
+        <td width="20%">he:</td>
+        <td width="80%">HEADER</td>
+      </tr>
+      <tr>
+        <td width="20%">de:</td>
+        <td width="80%">DETAIL</td>
+      </tr>
+      <tr>
+        <td width="20%">fo:</td>
+        <td width="80%">FOOTER</td>
+      </tr>
+      <tr>
+        <td width="20%">su:</td>
+        <td width="80%">SUMMARY</td>
+      </tr>
+    </table>
+    </div><hr>
+    <p><font size="4">Example:</font></p>
+    <pre><font color="#0000FF"># CUSTOMERS.FMT
+# Basic customer report (FORMAT version)
+#
+&lt;config&gt;
+StartConfString=$C10$$COFF$    // 10 CPI not condensed (80 cols)
+PaperLenght=60
+TopMargin=2
+LeftMargin=5                 
+&lt;/config&gt;
+
+&lt;macros&gt;
+CSTATUS=proper(STATUS)
+COMPNAME='XYZ Bookstore'
+COMPADDRESS='Caracas, Venezuela'
+&lt;/macros&gt;
+
+&lt;format&gt;
+#...+....[....+....[....+....1....+....1....+....1....+....1....+....1....+....1
+he: [COMPNAME                         ]                                CUSTOMER LIST
+he: [COMPADDRESS                      ]
+he: 
+he: CUSTOMER ID           CUSTOMER NAME                          STATUS
+he: ====================  ====================================== ==========
+de: [COD               ]  [PROPER(CUSTNAME)                    ] [CSTATUS]
+fo: 
+fo: 
+fo: 
+fo: [datetime           ]                                                   [pageno]
+&lt;/format&gt;</font></pre>
+    </td>
+  </tr>
+</table>
+</tr></td></table>
+</body>
+</html>

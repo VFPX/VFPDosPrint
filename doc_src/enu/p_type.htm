@@ -1,0 +1,68 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Type Property</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">Type (Property)</font></b> </td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p>Determines the type of a section. Section's type is used to determinate
+    if the sections represents:<p>a) a main section of the format file: HEADER, DETAIL,
+    FOOTER, etc.<br>
+    b) a section used by a defined control group.<br>
+    c) an internal or custom event.</p>
+    <p>For example, when the <a href="u_detailsection.htm">DETAIL</a> section is to be
+    printed, DP searchs in the <a href="p_sections.htm">Sections</a> collection looking for a
+    section with <strong>Type=DETAIL</strong>. If more than one section is found, DP uses
+    section's <a href="p_applyif.htm">ApplyIf</a> property to determinate wich of them will be
+    printed.<br>
+    Any section with <strong>Type=EVENT</strong> will be considered an event and can be called
+    from inside the format using <a href="m_callevent.htm">CallEvent</a> method. If a section
+    named <strong>Init</strong> or <strong>Close</strong> is found, will be automatically
+    asumed as an event.</p>
+    <hr>
+    <p><font size="4">Applies to:</font></p>
+    <p><br>
+    <a href="c_section.htm">Section object</a> </p>
+    <hr>
+    <p><font size="4">Example:</font></p>
+    <pre><font color="#0000FF"># This is a detail band. Note that &lt;detail&gt; is equivalent to &lt;detail <strong>Type</strong>=detail&gt;
+#
+&lt;detail&gt;
+[COD] [CUSTNAME           ]
+&lt;/detail&gt;
+
+# Also is this
+#
+&lt;MyDetailBand <strong>Type</strong>=detail&gt;
+[COD] [CUSTNAME           ]
+&lt;/MyDetailBand&gt;
+
+# This is a custom event
+#
+&lt;MyEvent <strong>Type</strong>=event&gt;
+*-- Some code here
+&lt;/MyEvent&gt;</font></pre>
+    <hr>
+    <p><font size="4">See also:</font></p>
+    <p><br>
+    <a href="p_applyif.htm">ApplyIf</a>, <a href="u_archivosfmt.htm">Format files</a></td>
+  </tr>
+</table>
+</tr></td></table>
+</body>
+</html>

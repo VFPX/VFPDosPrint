@@ -1,0 +1,102 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Método Run</title>
+</head>
+
+<body>
+
+<p><a name="TOP"></a></p>
+
+<p><b><font size="5">Run (Método)</font></b></p>
+
+<hr>
+
+<p>Imprime un informe completo utilizando el <a href="u_archivosfmt.htm">archivo de
+formato</a> indicado en la propiedad PrintFormat.</p>
+
+<hr>
+
+<p><font size="4">Aplica a:</font></p>
+
+<p><br>
+<a href="c_dosprint.htm">Clase DOSPrint</a></p>
+
+<hr>
+
+<p><font size="4">Sintaxis:</font></p>
+
+<p><br>
+Object.Run([cAlias][,cWhileExpr][,cForExpr][,nDSID])</p>
+
+<hr>
+
+<p><font size="4">Donde:</font></p>
+
+<p>&nbsp;</p>
+
+<table border="1" width="100%">
+  <tr>
+    <td width="20%">Object</td>
+    <td width="80%">Referencia a un objeto perteneciente a una de las clases indicadas en
+    Aplica a:</td>
+  </tr>
+  <tr>
+    <td width="20%">cAlias</td>
+    <td width="80%">Opcional. Alias de la tabla, cursor o vista que se recorrerá para el
+    informe. Si no se indica, se asume el alias activo.</td>
+  </tr>
+  <tr>
+    <td width="20%">cWhileExpr</td>
+    <td width="80%">Opcional. Expresión condicional que indica la condición que debe
+    cumplirse para que se continue con la generación del informe. El informe se detendrá en
+    el primer registro que no cumpla con la condición indicada en este parámetro. Si no se
+    indica, se procesan todos los registros del alias a recorrer.</td>
+  </tr>
+  <tr>
+    <td width="20%">cForExpr</td>
+    <td width="80%">Opcional. Expresión condicional que indica la condición que debe cumplir
+    un registro para ser incluido dentro del informe. Note que el cuando se encuentre un
+    registro que no cumpla con esta condición, el informe no se detendrá sino que
+    continuará con el siguiente registro en el alias.</td>
+  </tr>
+  <tr>
+    <td width="20%">nDSID</td>
+    <td width="80%">Opcional. Sesión de datos a utilizar para el informe. Si no se indica, se
+    asume la sesión de datos predeterminada.</td>
+  </tr>
+</table>
+
+<hr>
+
+<p><font size="4">Ejemplo(s):<br>
+</font></p>
+
+<pre><font color="#0000FF">*-- Se genera el informe
+*
+#DEFOBJ oRep AS DOSPrint
+oRep.PrintFormat:=&quot;INFBASCLI.FMT&quot;
+oRep.Clear()
+oRep.<strong>Run</strong>(&quot;QCLIENTES&quot;,&quot;&quot;,&quot;STATUS=[ACTIVO]&quot;)
+oRep.Print()
+#UNDEFOBJ oRep
+</font></pre>
+
+<hr>
+
+<p><font size="4">Ver también:</font></p>
+
+<p>&nbsp;</p>
+
+<p><a href="p_printformat.htm">PrintFormat</a></p>
+
+<hr>
+
+<p align="center"><a href="index.htm">[Regresar]</a></p>
+</body>
+</html>

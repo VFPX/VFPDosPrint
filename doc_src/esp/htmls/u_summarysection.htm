@@ -1,0 +1,82 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Sección SUMMARY</title>
+</head>
+
+<body>
+
+<p><a name="TOP"></a></p>
+
+<p><b><font size="5">Sección SUMMARY</font></b><br>
+</p>
+
+<hr>
+
+<p>La sección SUMMARY identifica el texto a imprimir como resumen final del informe. La
+sección SUMMARY se imprime solo una vez al finalizar el informe.&nbsp; Si la propiedad <a
+href="p_ejectbeforesummary.htm">EjectBeforeSummary</a> está en <strong>Verdadero</strong>,
+se emitirá un salto de página antes de imprimir esta sección.</p>
+
+<hr>
+
+<p><font size="4">Ejemplo:</font></p>
+
+<p>&nbsp;</p>
+
+<pre><font color="#0000FF"># INFBASCLI.FMT
+# Listado básico de clientes
+#
+&lt;config&gt;</font></pre>
+
+<pre><font color="#0000FF">StartConfString=$C10$$COFF$    // 10 CPI sin compresión (80 cols)
+PaperLenght=60
+TopMargin=2
+LeftMargin=5                   // Margen para encuadernación
+&lt;/config&gt;
+
+&lt;macros&gt;
+CSTATUS=proper(STATUS)
+EMPRESA='Tuberias XYZ'
+DIRECCIONEMP='Caracas, Venezuela'</font></pre>
+
+<pre><font color="#0000FF">NUMCLI=TRANS(_COUNT[CODIGO],&quot;99,999&quot;)
+&lt;/macros&gt;
+</font></pre>
+
+<pre><font color="#0000FF">&lt;summary&gt;</font></pre>
+
+<p>&nbsp;</p>
+
+<pre><font color="#0000FF">***********************************
+TOTAL CLIENTES EN ARCHIVO: [NUMCLI]</font></pre>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<pre><font color="#0000FF">&lt;/summary&gt;
+</font></pre>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<p>&nbsp;</p>
+
+<p align="center"><a href="index.htm">[Regresar]</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

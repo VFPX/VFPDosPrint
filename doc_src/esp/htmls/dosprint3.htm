@@ -1,0 +1,255 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<TITLE>Libreria DOSPrint3</TITLE>
+</head>
+
+<body>
+
+<p><a name="TOP"></a><b><font size="5">Libreria DOSPrint3</font></b><br>
+</p>
+
+<p>Autor: <strong>Victor Espina</strong> <A href="mailto:(vespina@mitrompo.com">(vespina@mitrompo.com</A>)<br>
+F.U.M: 07-OCT-2001<br>
+</p>
+
+<hr>
+
+<p><A href="#INTRO">1. Introducción</A></p>
+
+<p><A href="#CONTENIDO">2. Contenido de DOSPRINT3.ZIP</A></p>
+
+<p><A href="#INTERFAZ">3. Interfaz de la clase cDOSPrint</A></p>
+
+<p><A href="#GRACIAS">4. Agradecimientos</A><br>
+</p>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<p><a name="INTRO"><small></small></a><font size="4">1. Introducción</font><small><br>
+</small></p>
+
+<p>&nbsp;</p>
+
+<p>La clase DOSPrint permite generar reportes en formato texto que aprovechan todas las
+características de las impresoras matriciales.</p>
+
+<p>&nbsp;</p>
+
+<p>Esta nueva versión 3.0 incorpora un salto sustancial en este sentido al permitir el
+uso de <A href="u_archivosfmt.htm">archivos de formato</A>, los cuales permiten definir "visualmente" el informe
+que se desea generar de una forma sencilla pero a la vez potente. Esto permite minimizar
+sensiblemente el código necesario para generar un informe basado en DOS, tal como se
+puede apreciar en los ejemplos incluidos.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><a name="CONTENIDO"></a><font size="4">2. Contenido del archivo DOSPRINT3.ZIP</font><small><br>
+</small></p>
+
+<p>El archivo DOSPRINT3.ZIP debe contener los siguientes archivos:</p>
+
+<p>&nbsp;</p>
+
+<table border="1" width="60%">
+  <tr>
+    <td width="30%">DOSPRINT3.VCX<br>
+    DOSPRINT3.VCT</td>
+    <td width="70%">Libreria de clases DOSPRINT</td>
+  </tr>
+  <tr>
+    <td width="30%">CLIENTES.DBF</td>
+    <td width="70%">Tabla de clientes para el ejemplo INFBASCLI.PRG</td>
+  </tr>
+  <tr>
+    <td width="30%">INFBASCLI.FMT</td>
+    <td width="70%">Formato de impresión utilizado en el ejemplo INFBASCLI.PRG</td>
+  </tr>
+  <tr>
+    <td width="30%">INFBASCLI.PRG</td>
+    <td width="70%">Informe de ejemplo.</td>
+  </tr>
+  <tr>
+    <td width="30%">MOVCAJAS.DBF</td>
+    <td width="70%">Tabla de movimientos de caja para el ejemplo MOVCAJAS.PRG</td>
+  </tr>
+  <tr>
+    <td width="30%">MOVCAJAS.FMT</td>
+    <td width="70%">Formato de impresión utilizado en el ejemplo MOVCAJAS.PRG</td>
+  </tr>
+  <tr>
+    <td width="30%">MOVCAJAS.PRG</td>
+    <td width="70%">Informe de ejemplo.</td>
+  </tr>
+  <tr>
+    <td width="30%">BLANK.FMT</td>
+    <td width="70%">Formato en blanco que puede ser usado como base para nuevos informes.</td>
+  </tr>
+  <tr>
+    <td width="30%">Carpeta DOC</td>
+    <td width="70%">Documentación de DOSPrint3 (ver DOSPRINT3.HTM)</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><a name="INTERFAZ"><small></small></a><font size="4">3. Interfaz de la clase cDOSPrint</font><small><br>
+</small></p>
+
+<p>La interfaz de la clase cDOSPrint ha sido ampliada notablemente, a fín de permitir un
+mejor control sobre el proceso de impresión en los casos en los que se desea generar
+manualmente el informe. </p>
+
+<p>&nbsp;</p>
+
+<table border="1" width="100%">
+  <tr>
+    <th width="100%" colspan="5">Propiedades</th>
+  </tr>
+  <tr>
+    <td width="20%"><A href="p_autoeject.htm">AutoEject</A></td>
+    <td width="20%"><A href="p_bottommargin.htm">BottomMargin</A></td>
+    <td width="20%"><A href="p_printjobname.htm">PrintJobName</A></td>
+    <td width="20%"><A href="p_detailstring.htm">DetailString</A></td>
+    <td width="20%"><A href="p_ejectaftertitle.htm">EjectAfterTitle</A></td>
+  </tr>
+  <tr>
+    <td width="20%"><A href="p_ejectbeforesummary.htm">EjectBeforeSummary</A></td>
+    <td width="20%"><A href="p_ejectstring.htm">EjectString</A></td>
+    <td width="20%"><A href="p_footerstring.htm">FooterString</A></td>
+    <td width="20%"><A href="p_headerstring.htm">HeaderString</A></td>
+    <td width="20%"><A href="p_leftmargin.htm">LeftMargin</A></td>
+  </tr>
+  <tr>
+    <td width="20%"><A href="p_lineno.htm">LineNo</A></td>
+    <td width="20%"><A href="p_macros.htm">Macros[...]</A></td>
+    <td width="20%"><A href="p_newpageconfstring.htm">NewPageConfString</A></td>
+    <td width="20%"><A href="p_onnewpage.htm">OnNewPage</A></td>
+    <td width="20%"><A href="p_pageno.htm">PageNo</A></td>
+  </tr>
+  <tr>
+    <td width="20%"><A href="p_paperlenght.htm">PaperLenght</A></td>
+    <td width="20%"><A href="p_printformat.htm">PrintFormat</A></td>
+    <td width="20%"><A href="p_startconfstring.htm">StartConfString</A></td>
+    <td width="20%"><A href="p_summarystring.htm">SummaryString</A></td>
+    <td width="20%"><A href="p_topmargin.htm">TopMargin</A></td>
+  </tr>
+  <tr>
+    <td width="20%"><A href="p_titlestring.htm">TitleString</A></td>
+    <td width="20%">&nbsp;</td>
+    <td width="20%">&nbsp;</td>
+    <td width="20%">&nbsp;</td>
+    <td width="20%">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table border="1" width="100%" height="76">
+  <tr>
+    <th width="100%" height="13" colspan="5">Métodos</th>
+  </tr>
+  <tr>
+    <td width="20%" height="13"><A href="m_addmacro.htm">AddMacro</A></td>
+    <td width="20%" height="13"><A href="m_clear8.htm">Clear</A></td>
+    <td width="20%" height="13"><A href="m_eject.htm">Eject</A></td>
+    <td width="20%" height="13"><A href="m_endgroups.htm">EndGroups</A></td>
+    <td width="20%" height="13"><A href="m_evalgroups.htm">EvalGroups</A></td>
+  </tr>
+  <tr>
+    <td width="20%" height="13"><A href="m_getformatsection.htm">GetFormatSection</A></td>
+    <td width="20%" height="13"><A href="m_getmacro.htm">GetMacro</A></td>
+    <td width="20%" height="13"><A href="m_print.htm">Print</A></td>
+    <td width="20%" height="13"><A href="m_printsection.htm">PrintSection</A></td>
+    <td width="20%" height="13"><A href="m_printtofile.htm">PrintToFile</A></td>
+  </tr>
+  <tr>
+    <td width="20%" height="13"><A href="m_run3.htm">Run</A></td>
+    <td width="20%" height="13"><A href="m_sectionheight.htm">SectionHeight</A></td>
+    <td width="20%" height="13"><A href="m_setmacro.htm">SetMacro</A></td>
+    <td width="20%" height="13"><A href="m_startgroups.htm">StartGroups</A></td>
+    <td width="20%" height="13"><A href="m_strexpand.htm">STRExpand</A></td>
+  </tr>
+  <tr>
+    <td width="20%" height="13"><A href="m_write.htm">Write</A></td>
+    <td width="20%" height="13"><A href="m_writeln.htm">WriteLn</A></td>
+    <td width="20%" height="13"></td>
+    <td width="20%" height="13"></td>
+    <td width="20%" height="13"></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>Las siguientes propiedades, aunque soportadas aún en esta versión, serán elminadas
+en la próxima versión de DOSPrint:</p>
+
+<p>&nbsp;</p>
+
+<table border="1" width="60%">
+  <tr>
+    <td width="30%">cDocName</td>
+    <td width="70%">Sustituido por la propiedad PrintJobName</td>
+  </tr>
+  <tr>
+    <td width="30%">FooterLenght</td>
+    <td width="70%">Sustituido por el método SectionHeight()</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><a name="GRACIAS"></a><font size="4">4. Agradecimientos</font><small><br>
+</small></p>
+
+<p>Quisiera dar un agradecimiento a todos los que de una u otra forma han ayudado en el
+mejoramiento y depuración de DOSPrint, muy especialmente a Esparta Palma, quien invertió
+su valioso tiempo en probar, depurar y corregir varios errores presentes en la versión
+2.0 y en las primeras etapas de esta nueva versión. </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>Victor Espina</p>
+
+<hr>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

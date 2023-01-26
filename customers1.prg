@@ -22,9 +22,10 @@ oDP=CREATEOBJECT("VFPDosPrint")
 oDP.PrintFormat="CUSTOMERS1.FMT"
 oDP.Run()
 
-*oDP.PrintToFile("OUT.TXT")
-oDP.Print("PDFCreator")
-*MODIFY FILE OUT.TXT
+oDP.PrintToFile("DP.OUT")
+MODIFY FILE DP.OUT
+
+* oDP.Print( GetPrinter() )   && Uncomment this to send the output to a selected printer
 
 RELEASE oDP
 CLOSE ALL

@@ -1,0 +1,124 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>GROUPS Section</title>
+</head>
+
+<body topmargin=0 leftmargin=0>
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border=0 cellpadding=0 cellspacing=1 width="100%">
+<tr><td class="title">
+<b><font size="5">GROUPS Section</font></b>
+
+</tr></td></table>
+<table class="body" border=0 cellpadding=0 cellspacing=5 width="100%" align="center">
+<tr><td class="body">
+
+
+<p>This sections defines any control groups used by the report. Each line in the sections
+defines a control group, using the following syntax:</p>
+
+<p>GROUP=Expr | Header | Footer</p>
+
+<p>where:</p>
+
+<table border="1" width="60%">
+  <tr>
+    <td width="30%">Expr</td>
+    <td width="70%">Control expression. When the result of this expression changes, a group
+    break is generated.</td>
+  </tr>
+  <tr>
+    <td width="30%">Header</td>
+    <td width="70%">Name of a custom section used as group header.</td>
+  </tr>
+  <tr>
+    <td width="30%">Footer</td>
+    <td width="70%">Name of a custom section used as group footer.</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>If there are more than one control group defined in the section, they will be evaluated
+in the same order there are defined in the section.</p>
+
+<hr>
+
+<p><font size="4">Example:</font></p>
+
+<pre><font color="#0000FF"># CUSTOMERS.FMT
+# Customer listing grouped by status.
+#
+&lt;config&gt;
+StartConfString=$C10$$COFF$    
+PaperLenght=60
+TopMargin=2
+LeftMargin=5
+EjectBeforeSummary=No
+&lt;/config&gt;
+
+&lt;macros&gt;
+CSTATUS=proper(STATUS)
+COMPNAME='XYZ Bookstore'
+COMPADDRESS='Caracas, Venezuela'
+TCOUNT=TRANS(_COUNT[],&quot;9,999&quot;)          // Total customer count
+GCOUNT=TRANS(_COUNT[STATUS],&quot;9,999&quot;)    // Customer count for current status
+&lt;/macros&gt;
+
+<strong>&lt;groups&gt;
+</strong>XSTATUS=STATUS | XSTATUS_HDR | XSTATUS_FTR<strong>
+&lt;/groups&gt;</strong>
+
+&lt;header&gt;
+#...+....[....+....[....+....1....+....1....+....1....+....1....+....1....+....1
+[COMPNAME                         ]                             CUSTOMER LISTING
+[COMPADDRESS                      ]                                 BY STATUS
+
+CUSTOMER ID           CUSTOMER NAME
+====================  ======================================
+&lt;/header&gt;
+
+&lt;xstatus_hdr&gt;
+
+STATUS: $BON$%PROPER(STATUS)%$BOFF$
+&lt;/xstatus_hdr&gt;<strong>
+</strong>
+&lt;detail&gt;
+[CUSTID            ]  [PROPER(CUSTNAME)                    ]
+&lt;/detail&gt;
+
+
+&lt;xstatus_ftr&gt;<strong>
+</strong>
+CUSTOMER COUNT: [GCOUNT ]
+</font>
+<font
+color="#0000FF">
+&lt;/xstatus_ftr&gt;
+
+&lt;footer&gt;
+
+
+[datetime           ]                                                   [pageno]
+&lt;/footer&gt;
+
+&lt;summary&gt;
+
+*******************************
+TOTAL CUSTOMER COUNT: [TCOUNT ]
+*******************************
+&lt;/summary&gt;</font></pre>
+
+<p>&nbsp;</p>
+
+</tr></td></table>
+</tr></td></table>
+</body>
+</html>

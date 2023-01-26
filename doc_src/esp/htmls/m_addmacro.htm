@@ -1,0 +1,91 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Método AddMacro</title>
+</head>
+
+<body>
+
+<p><a name="TOP"></a></p>
+
+<p><b><font size="5">AddMacro (Método)</font></b></p>
+
+<hr>
+
+<p>Permite añadir un nuevo macro a la lista de macros definidas en el informe.</p>
+
+<hr>
+
+<p><font size="4">Aplica a:</font></p>
+
+<p><br>
+<a href="c_dosprint.htm">Clase DOSPrint</a></p>
+
+<hr>
+
+<p><font size="4">Sintaxis:</font></p>
+
+<p><br>
+Object.AddMacro(cName,cExpr)</p>
+
+<hr>
+
+<p><font size="4">Donde:</font></p>
+
+<table border="1" width="100%">
+  <tr>
+    <td width="20%">Object</td>
+    <td width="80%">Referencia a un objeto perteneciente a algunas de las clases indicadas en
+    Aplica a:</td>
+  </tr>
+  <tr>
+    <td width="20%">cName</td>
+    <td width="80%">Nombre del macro (sin los signos $). Note que si ya existia un macro con
+    el nombre indicado en cName no se generará un error y el nuevo macro será añadido al
+    final de la lista. Sin embargo, cuando se expanda una linea del informe, el valor asignado
+    al macro será el de la primera definición encontrada.</td>
+  </tr>
+  <tr>
+    <td width="20%">cExpr</td>
+    <td width="80%">Expresión que define el contenido del macro. Esta expresión será
+    evaluada al imprimirse cada linea del informe para determinar el valor del macro en ese
+    momento. En lugar de una expresión también puede usarse un valor constantes (por
+    ejemplo, DATE(), TIME(), &quot;Página: &quot;, etc).</td>
+  </tr>
+</table>
+
+<hr>
+
+<p><font size="4">Ejemplo(s):</font></p>
+
+<pre><font color="#0000FF">*-- #1: Macro constante
+*
+oRep.<strong>AddMacro</strong>(&quot;NOMEMP&quot;,&quot;Panaderia XYZ, C.A.&quot;)
+
+</font></pre>
+
+<pre><font color="#0000FF">*-- #2: Macro dinámico
+*
+oRep.<strong>AddMacro</strong>(&quot;NOMEMP&quot;,&quot;Kernel.EMP.Current.Reference&quot;)</font></pre>
+
+<p><font color="#0000FF">&nbsp;</font></p>
+
+<hr>
+
+<p><font size="4">Ver también:</font></p>
+
+<p>&nbsp;</p>
+
+<p><a href="m_setmacro.htm">SetMacro</a>, <a href="m_getmacro.htm">GetMacro</a>, <a
+href="p_macros.htm">Macros</a></p>
+
+<hr>
+
+<p align="center"><a href="index.htm">[Regresar]</a></p>
+</body>
+</html>

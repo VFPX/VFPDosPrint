@@ -1,0 +1,54 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>SectionEndMark Property</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">SectionEndMark (Property)</font></b> </td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p><p>Defines the char or characters used to delimit the end of a format
+    section. By default, the value for this property is '&gt;'. <a
+    href="p_sectionbeginmark.htm]">SectionBeginMark</a> and SectionEndMark are very usefull
+    when DOSPrint is used to generate formated documents as HTML, XML, etc.<p>Note that both
+    section mark changes are not applied to CONFIG section, wich allways must be defined using
+    the default section markers (&lt; &gt;). Also notes that a &quot;/&quot; must be used
+    right after the section begin mark to denote the end of a section.</p>
+    <hr>
+    <p><font size="4">Applies to:</font></p>
+    <p><br>
+    <a href="index.htm">DOSPrint class</a> </p>
+    <hr>
+    <p><font size="4">Example:</font></p>
+    <pre><font color="#0000FF">&lt;config&gt;
+SectionBeginMark=&quot;[-&quot;
+<strong>SectionEndMark</strong>=&quot;-]&quot;
+&lt;/config&gt;
+
+[-header-]
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;%HTMLTitle%&lt;/title&gt;
+&lt;/head&gt;
+[-/header-]</font></pre>
+    <hr>
+    <p><font size="4">See also:</font></p>
+    <p><br>
+    <a href="p_sectionbeginmark.htm">SectionBeginMark</a></td>
+  </tr>
+</table>
+</tr></td></table>
+</body>
+</html>

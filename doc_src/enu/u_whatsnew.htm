@@ -1,0 +1,220 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>What's new</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">What's new</font></b></td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p>
+    <h1>New features and fixes in version 4.2:</h1>
+    <div align="left"><table border="1" width="100%">
+      <tr>
+        <th width="20%">Area</th>
+        <th width="20%">Feature name</th>
+        <th width="60%">Description</th>
+      </tr>
+      <tr>
+        <td>New properties</td>
+        <td>PDEOF</td>
+        <td>This new runtime variable can be used with <a href=p_applyif.htm>ApplyIf</a> property to
+            define a section that will only be printed at the end of report.<br><br>
+            The property evaluates to <b>True</b> after the last detail record is printed, wich makes
+            it suitable to be used in Page or group footer sections.</td>
+       </tr>
+       <tr>
+        <td width="100%" colspan="3">&nbsp;</td>
+       </tr>
+       <tr>
+        <td width="20%">Improvments</td>
+        <td width="20%">Clear method</td>
+        <td width="60%">The <a href=m_clear.htm>Clear</a> method was redesigned to allow the creation of a
+        public instance of <b>DP</b> rather than local instances that are destroyed after been used. With
+        this version, you can create a single public instance of <b>DP</b> and then call the Clear method
+        just before the printout process.</td>
+       </tr>
+      </table>
+      </div>
+      <br><br>
+
+    <h1>New features and fixes in version 4.1:</h1>
+    <div align="left"><table border="1" width="100%">
+      <tr>
+        <th width="20%">Area</th>
+        <th width="20%">Feature name</th>
+        <th width="60%">Description</th>
+      </tr>
+      <tr>
+        <td width="20%" rowspan="12" valign="top">New properties</td>
+        <td width="20%">Copies</td>
+        <td width="60%">Default number of copies</td>
+      </tr>
+      <tr>
+        <td width="20%">Events</td>
+        <td width="60%">Collection of events defined in the current format file</td>
+      </tr>
+      <tr>
+        <td width="20%">FileName</td>
+        <td width="60%">Default disk file name (used when send report to disk file)</td>
+      </tr>
+      <tr>
+        <td width="20%">PrintHeaderOnSummary</td>
+        <td width="60%">Prints or not header section when printing summary section</td>
+      </tr>
+      <tr>
+        <td width="20%">PrintHeaderOnTitle</td>
+        <td width="60%">Prints or not header section when printing title section</td>
+      </tr>
+      <tr>
+        <td width="20%">PrinterName</td>
+        <td width="60%">Default printer name</td>
+      </tr>
+      <tr>
+        <td width="20%">RunCallBack</td>
+        <td width="60%">Callback expression for run process</td>
+      </tr>
+      <tr>
+        <td width="20%">RunProgressMessage<br>
+        ShowRunProgress</td>
+        <td width="60%">Activate or desactivate a progress windows while executing Run method. The
+        progress message is customizable.</td>
+      </tr>
+      <tr>
+        <td width="20%">Sections</td>
+        <td width="60%">Collection of all sections defined in the current format file</td>
+      </tr>
+      <tr>
+        <td width="20%">SectionBeginMark<br>
+        SectionEndMark</td>
+        <td width="60%">Customize delimiters for section tags</td>
+      </tr>
+      <tr>
+        <td width="20%">SendToFile<br>
+        SentToPrinter<br>
+        SendToText</td>
+        <td width="60%">Configure the default output of the current report</td>
+      </tr>
+      <tr>
+        <td width="20%">ShowNullValues</td>
+        <td width="60%">Show or hide null values inside the report</td>
+      </tr>
+      <tr>
+        <td width="100%" colspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="20%" rowspan="9" valign="top">New methods</td>
+        <td width="20%">CallEvent</td>
+        <td width="60%">Executes an event defined in the current format file</td>
+      </tr>
+      <tr>
+        <td width="20%">CallSubReport</td>
+        <td width="60%">Calls another format files as a nested report</td>
+      </tr>
+      <tr>
+        <td width="20%">GetFormatSectionList</td>
+        <td width="60%">Returns a collection with the names of all sections defined in the current
+        format file</td>
+      </tr>
+      <tr>
+        <td width="20%">LoadFormatSection</td>
+        <td width="60%">Returns a Section object wich represents a section defined in the current
+        format file</td>
+      </tr>
+      <tr>
+        <td width="20%">PrintToText</td>
+        <td width="60%">Returns a string with the results of the current report</td>
+      </tr>
+      <tr>
+        <td width="20%">RunFormat</td>
+        <td width="60%">Quick way to execute a format file</td>
+      </tr>
+      <tr>
+        <td width="20%">SendFileToPrinter</td>
+        <td width="60%">Sends a file to a printer</td>
+      </tr>
+      <tr>
+        <td width="20%">SendTextToPrinter</td>
+        <td width="60%">Sends any string to a printer</td>
+      </tr>
+      <tr>
+        <td width="20%">SetMacroValue</td>
+        <td width="60%">Changes the current value of a defined macro</td>
+      </tr>
+      <tr>
+        <td width="100%" colspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="20%" rowspan="3" valign="top">Format files syntax</td>
+        <td width="20%">Sections properties</td>
+        <td width="60%">New <strong>Type</strong>, <strong>ApplyIf</strong>, <strong>PrintOnNewPage</strong>
+        and <strong>IntegralHeight</strong> properties for any defined section</td>
+      </tr>
+      <tr>
+        <td width="20%">Format section</td>
+        <td width="60%">Special section wich highly simplifies the report design.</td>
+      </tr>
+      <tr>
+        <td width="20%">Events</td>
+        <td width="60%">Special sections wich contains <strong>VFP</strong> source code that can
+        be executed from any point inside a format file</td>
+      </tr>
+    </table>
+    </div></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p><font size="4">Fixed bugs:</font></p>
+
+<p>Additionally, the following know bugs where fixed: 
+
+<ul>
+  <li>When a footer section does not fit in the current page, a page break is generated but
+    the Header section is not printed.</li>
+  <li>Current value for defined macro went to blanks where macros are used in Summary section
+    or Footer section in the last page of the report.</li>
+  <li>If an expandible expression delimited with [ ] was incorrect, the next expandible
+    expression is not expanded either.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><font size="4">New predefined macro PageCnt:</font></p>
+
+<p>Yes! now you can put a 'Page 0 of 0' in your DP reports, using the new predefined macro
+<strong>PageCnt</strong>. Just that easy: put a %PageCnt% inside your format file and the
+macro will be expanded at the end of the report.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><font size="4">VFP5 Compatibility:</font></p>
+
+<p>This version of DP is no longer compatible with Visual FoxPro 5.0.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</tr></td></table>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Windows Help Designer http://www.visagesoft.com">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI><OBJECT type="text/sitemap">
+		<param name="Name" value="Interfaz">
+		</OBJECT>
+	<UL>
+		<LI><OBJECT type="text/sitemap">
+			<param name="Name" value="Propiedades">
+			</OBJECT>
+		<UL>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="AutoEject">
+				<param name="Local" value="htmls\p_autoeject.htm">
+				</OBJECT>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="BottomMargin">
+				<param name="Local" value="htmls\p_bottommargin.htm">
+				</OBJECT>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="EjectAfterTitle">
+				<param name="Local" value="htmls\p_ejectaftertitle.htm">
+				</OBJECT>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="EjectBeforeSummary">
+				<param name="Local" value="htmls\p_ejectbeforesummary.htm">
+				</OBJECT>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="EjectString">
+				<param name="Local" value="htmls\p_ejectstring.htm">
+				</OBJECT>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="LeftMargin">
+				<param name="Local" value="htmls\p_leftmargin.htm">
+				</OBJECT>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="LineNo">
+				<param name="Local" value="htmls\p_lineno.htm">
+				</OBJECT>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Macros">
+				<param name="Local" value="htmls\p_macros.htm">
+				</OBJECT>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="NewPageConfString">
+				<param name="Local" value="htmls\p_newpageconfstring.htm">
+				</OBJECT>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="OnNewPage">
+				<param name="Local" value="htmls\p_onnewpage.htm">
+				</OBJECT>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="PageNo">
+				<param name="Local" value="htmls\p_pageno.htm">
+				</OBJECT>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="PaperLenght">
+				<param name="Local" value="htmls\p_paperlenght.htm">
+				</OBJECT>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="PrintFormat">
+				<param name="Local" value="htmls\p_printformat.htm">
+				</OBJECT>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="PrintHeaderOnSummary">
+				<param name="Local" value="htmls\p_printheaderonsummary.htm">
+				</OBJECT>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="PrintJobName">
+				<param name="Local" value="htmls\p_printjobname.htm">
+				</OBJECT>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="SectionBeginMark">
+				<param name="Local" value="htmls\p_sectionbeginmark.htm">
+				</OBJECT>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="SectionEndMark">
+				<param name="Local" value="htmls\p_sectionendmark.htm">
+				</OBJECT>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="StartConfigString">
+				<param name="Local" value="htmls\p_startconfstring.htm">
+				</OBJECT>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="TopMargin">
+				<param name="Local" value="htmls\p_topmargin.htm">
+				</OBJECT>
+		</UL>
+	</UL>
+</UL>
+</BODY></HTML>

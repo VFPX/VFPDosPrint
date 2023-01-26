@@ -1,0 +1,46 @@
+# CASHTOTALS.FMT
+# Totals by POSID. As this report is supossed to be called from inside another report, note
+# the use of AutoEject property to avoid page breaks in this report.
+#
+<config>
+PaperLenght=60   
+TopMargin=0
+LeftMargin=2
+AutoEject=False
+</config>
+
+#
+# Init event. Get the dataset to use in the report
+#
+<init>
+
+ select posid,sum(amount) as balance ;
+   from cashtrans ;
+  group by posid ;
+   into cursor qCashTotals
+
+</init>
+
+<macros>
+XAMOUNT=TRANS(balance,"999,999,999.99")
+</macros>
+
+#
+# Format section. Defines the layout of the report.
+#
+<format>
+he: 
+he:
+he:                                 REPORT SUMMARY
+he:
+he:
+de:                        [POSID  ]  ------> [XAMOUNT      ]
+</format>
+
+
+#
+# Close event. File closing
+#
+<close>
+use in qCashTotals
+</close>

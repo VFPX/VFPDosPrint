@@ -1,0 +1,73 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>ApplyIf Property</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">ApplyIf (Property)</font></b> </td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p>Conditional expression to be applicated to the section. This expression
+    is evaluated each time the section is going to be printed. If the conditional fails, the
+    section will not be printed. This lets you to define multiple sections of the same type.
+    You can even have more than one section of any type printed at the same type. If two or
+    more sections are going to be printed at the same time, they will be printed in the order
+    they are declared in the print format.<br><br>
+    <b>SPECIAL NOTE</b>: You can use an special runtime variable called DPEOF to define sections that
+    should be printed in the last page of the report. DPEOF will setted to <b>True</b> after the last
+    detail record is readed and printed.<hr>
+    <p><font size="4">Applies to:</font></p>
+    <p><br>
+    <a href="c_section.htm">Section object</a> </p>
+    <hr>
+    <p><font size="4">Example:</font></p>
+    <pre><font color="#0000FF"># Detail band (Type A records)
+#
+&lt;detail_a type=detail <strong>applyif</strong>=(rectype=&quot;A&quot;)&gt;
+[COD] [DESCR_A              ]
+&lt;/detail_a&gt;
+
+# Detail band (Type B records)
+#
+&lt;detail_b type=detail <strong>applyif</strong>=(rectype=&quot;B&quot;)&gt;
+[COD] [DESCR_B              ]
+&lt;/detail_b&gt;
+
+# Footer band (Normal pages)
+#
+&lt;footer type=footer <strong>applyif</strong>=(NOT DPEOF)&gt;
+
+[datetime]                                       [PageNo]
+&lt;/footer&gt;
+
+# Footer band (Last page)
+#
+&lt;lastpage type=footer <strong>applyif</strong>=(DPEOF)&gt;
+
+                  ------ ENF OF REPORT ------
+
+[datetime]                                       [PageNo]
+&lt;/lastpage&gt;
+</font></pre>
+    <hr>
+    <p><font size="4">See also:</font></p>
+    <p><br>
+    <a href="p_type.htm">Type</a></td>
+  </tr>
+</table>
+</tr></td></table>
+</body>
+</html>

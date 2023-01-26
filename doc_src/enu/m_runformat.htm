@@ -1,0 +1,90 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Name Method</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td class="title"><b><font size="5">RunFormat (Method)</font></b> </td>
+  </tr>
+</table>
+
+<table class="body" border="0" cellpadding="0" cellspacing=5 width="100%" align="center">
+  <tr>
+    <td class="body"><p><p><p>Loads a <a href="u_archivosfmt.htm">format file</a> and runs it.<hr>
+    <p><font size="4">Applies to:</font></p>
+    <p><br>
+    <a href="index.htm">DOSPrint class</a></p>
+    <hr>
+    <p><font size="4">Syntax:</font></p>
+    <p><br>
+    Object.RunFormat(cFormat[,cAlias][,nPrintTo][,cPrinter][,cWhile][,cFor][,nDSID])</p>
+    <hr>
+    <p><font size="4">Where:</font></p>
+    <table border="1" width="100%">
+      <tr>
+        <td width="20%">Object</td>
+        <td width="80%">Reference to an object of one of the class mentioned in Applies to:</td>
+      </tr>
+      <tr>
+        <td width="20%">cFormat</td>
+        <td width="80%">Name of the format file to run.</td>
+      </tr>
+      <tr>
+        <td width="20%">cAlias</td>
+        <td width="80%">Optional. Alias of the dataset to use or a reference to an ADO RecordSet
+        object. If omitted, the current workarea will be used.</td>
+      </tr>
+      <tr>
+        <td width="20%">nPrintTo</td>
+        <td width="80%">Optional. Destination of the report:<p>1 or ommited: Printer. cPrinter
+        parameter or <a href="p_printername.htm">PrinterName</a> will be used as the target
+        printer.<br>
+        2: Disk file. The destination file will be the one indicated in <a href="p_filename.htm">FileName</a>
+        property<br>
+        3: Text</td>
+      </tr>
+      <tr>
+        <td width="20%">cPrinter</td>
+        <td width="80%">Optional. Name of the printer to be used. If omitted, <a
+        href="p_printername.htm">PrinterName</a> property will be used.</td>
+      </tr>
+      <tr>
+        <td width="20%">cWhile</td>
+        <td width="80%">Optional. If one of the record in the dataset fails to this condition, no
+        further records will be evaluated and the report will be normally terminated. At this
+        moment, this parameter is not used with ADO RecordSets.</td>
+      </tr>
+      <tr>
+        <td width="20%">cFor</td>
+        <td width="80%">Optional. Any record in the dataset wich fails to this condition will be
+        skipped and not included in the report. At this moment, this parameter is not used with
+        ADO RecordSets.</td>
+      </tr>
+      <tr>
+        <td width="20%">nDSID</td>
+        <td width="80%">Optional. Datasession ID to use. If omitted, the current datasession will
+        be used. This parameter has no effect on ADO Recordsets.</td>
+      </tr>
+    </table>
+    <hr>
+    <p><font size="4">Examples:</font></p>
+    <pre><font color="#0000FF">*-- Run the report and sent it to a printer
+*
+oDP=CREATEOBJECT(&quot;cDOSPrint&quot;)
+oDP.RunFormat('CUSTOMERS.FMT','QCUST',1,'FX-1050')</font></pre>
+    </td>
+  </tr>
+</table>
+</tr></td></table>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>PrintSection Method</title>
+</head>
+
+<body topmargin=0 leftmargin=0>
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border=0 cellpadding=0 cellspacing=1 width="100%">
+<tr><td class="title">
+<b><font size="5">PrintSection (Method)</font></b>
+
+</tr></td></table>
+<table class="body" border=0 cellpadding=0 cellspacing=5 width="100%" align="center">
+<tr><td class="body">
+
+
+<p>Prints an specified section. Normally, this method is not used if you are using <a
+href="u_archivosfmt.htm">format files</a>.</p>
+
+<hr>
+
+<p><font size="4">Applies to:</font></p>
+
+<p><br>
+<a href="index.htm">DOSPrint class</a></p>
+
+<hr>
+
+<p><font size="4">Syntax:</font></p>
+
+<p><br>
+Object.PrintSection(cSeccion[,lNoEject])</p>
+
+<hr>
+
+<p><font size="4">Where:</font></p>
+
+<table border="1" width="100%">
+  <tr>
+    <td width="20%">Object</td>
+    <td width="80%">Reference to an object of one of the class mentioned in Applies to:</td>
+  </tr>
+  <tr>
+    <td width="20%">cSeccion</td>
+    <td width="80%">Name of the section to print. If the secions indicated is TITLE, HEADER,
+    DETAIL, FOOTER or SUMMARY, the corresponding properties (TitleString, HeaderString,
+    DetailString and FooterString) will be used; in any other case, the section will be
+    searched in the current format file.</td>
+  </tr>
+  <tr>
+    <td width="20%">lNoEject</td>
+    <td width="80%">Optional. If <strong>True</strong>, no page breaks will be executed while
+    printing the section.</td>
+  </tr>
+</table>
+
+<hr>
+
+<p><font size="4">Examples:</font></p>
+
+<pre><font color="#0000FF">oRep.StartGroups()
+DO WHILE NOT EOF()
+ oRep.EvalGroups()
+ oRep.<strong>PrintSection</strong>(&quot;DETAIL&quot;)
+ SKIP
+ENDDO
+oRep.EndGroups()
+</font></pre>
+
+<hr>
+
+<p><font size="4">See also:</font></p>
+
+<p><br>
+<a href="m_write.htm">Write</a>, <a href="m_writeln.htm">WriteLn</a>, <a
+href="u_archivosfmt.htm">Format files</a></p>
+
+</tr></td></table>
+</tr></td></table>
+</body>
+</html>

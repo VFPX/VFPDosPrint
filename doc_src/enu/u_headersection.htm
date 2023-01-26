@@ -1,0 +1,68 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>HEADER Section</title>
+</head>
+
+<body topmargin=0 leftmargin=0>
+<table class="title" width=100% cellpadding=0 cellspacing=0>
+<tr><td>
+
+<table class="title" border=0 cellpadding=0 cellspacing=1 width="100%">
+<tr><td class="title">
+<b><font size="5">HEADER Section</font></b>
+
+</tr></td></table>
+<table class="body" border=0 cellpadding=0 cellspacing=5 width="100%" align="center">
+<tr><td class="body">
+
+
+<p>Defines the text to be printed at the top of any page.</p>
+
+<hr>
+
+<p><font size="4">Example:</font></p>
+
+<pre><font color="#0000FF"># CUSTOMERS.FMT
+# Basic customer report
+#
+&lt;config&gt;
+StartConfString=$C10$$COFF$    // 10 CPI not condensed (80 cols)
+PaperLenght=60
+TopMargin=2
+LeftMargin=5
+&lt;/config&gt;
+
+&lt;macros&gt;
+CSTATUS=proper(STATUS)
+COMPNAME='XYZ Bookstore'
+COMPADDRESS='Caracas, Venezuela'
+&lt;/macros&gt;
+
+<strong>&lt;header&gt;</strong>
+#...+....[....+....[....+....1....+....1....+....1....+....1....+....1....+....1
+[COMPNAME                         ]                                CUSTOMER LIST
+[COMPADDRESS                      ]
+
+CUSTOMER ID           CUSTOMER NAME                          STATUS
+====================  ====================================== ==========
+<strong>&lt;/header&gt;</strong>
+
+&lt;detail&gt;
+[COD               ]  [PROPER(CUSTNAME)                    ] [CSTATUS]
+&lt;/detail&gt;
+
+
+&lt;footer&gt;
+
+
+[datetime           ]                                                   [pageno]
+&lt;/footer&gt;</font></pre>
+
+</tr></td></table>
+</tr></td></table>
+</body>
+</html>

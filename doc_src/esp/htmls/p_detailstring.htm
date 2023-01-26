@@ -1,0 +1,59 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<meta http-equiv="Content-Language" content="es-ve">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<TITLE>Propiedad DetailString</TITLE>
+</head>
+
+<body>
+
+<p><b><font size="5">DetailString (Propiedad)</font></b></p>
+
+<hr>
+
+<p>Permite establecer el texto a imprimir en la banda de detalle del informe.<strong> </strong>Si
+se está usando un <A href="u_archivosfmt.htm">formato de impresión</A>, esta propiedad
+contendrá el texto indicado en la sección <strong>DETAIL</strong> del formato indicado.
+Note que aunque la propiedad es de lectura/escritura, el hecho de cambiar el valor de la
+propiedad NO afecta al formato indicado.</p>
+
+<hr>
+
+<p><font size="4">Ejemplo(s):</font></p>
+
+<pre><font color="#0000ff">*-- Se configura el reporte
+*
+#DEFOBJ oRep AS DOSPrint
+oRep.PaperLenght:=60
+oRep.HeaderString:="INFORME DE CLIENTES $CRLF$" + ;</font></pre>
+
+<pre><font color="#0000ff">                   "AL $DATE$"
+oRep.<strong>DetailString</strong>:="[CODIGO] [NOMBRE              ]"
+oRep.FooterString:="$DATETIME$                        $PAGENO$"
+...
+
+*-- Se imprimen los registros
+*
+#DBSELECT qClientes
+#DBGO TOP
+#DOWHILE Not EOF()
+ oRep.PrintSection("DETAIL")
+ #DBSKIP
+#ENDDO
+..
+</font></pre>
+
+<hr>
+
+<p><font size="4">Ver también:</font></p>
+
+<p>&nbsp;</p>
+
+<p><A href="p_titlestring.htm">TitleString</A>, <A href="p_headerstring.htm">HeaderString</A>,
+<A href="p_footerstring.htm">FooterString</A>, <A href="p_summarystring.htm">SummaryString</A></p>
+</body>
+</html>

@@ -1,0 +1,62 @@
+[OPTIONS]
+Full-text search=Yes
+Compatibility=1.1
+Compiled file=dp4esp.chm
+Display compile progress=Yes
+Language=0x200a Spanish (Venezuela)
+title=Ayuda de DOSPrint 4.0
+Default Font=Verdana,8,0
+Contents file=dp4esp.hhc
+Index File=dp4esp.hhk
+
+[WINDOWS]
+
+[FILES]
+htmls\p_autoeject.htm
+htmls\p_bottommargin.htm
+htmls\m_eject.htm
+htmls\p_ejectaftertitle.htm
+htmls\dosprint3.htm
+htmls\m_addmacro.htm
+htmls\m_afterwrite.htm
+htmls\m_clear8.htm
+htmls\m_writeln.htm
+htmls\m_evalgroups.htm
+htmls\m_getformatsection.htm
+htmls\m_getmacro.htm
+htmls\m_print.htm
+htmls\m_printsection.htm
+htmls\m_printtofile.htm
+htmls\m_run3.htm
+htmls\m_sectionheight.htm
+htmls\m_setmacro.htm
+htmls\m_startgroups.htm
+htmls\m_strexpand.htm
+htmls\m_write.htm
+htmls\m_endgroups.htm
+htmls\u_titlesection.htm
+htmls\p_ejectstring.htm
+htmls\p_leftmargin.htm
+htmls\p_lineno.htm
+htmls\p_macros.htm
+htmls\p_newpageconfstring.htm
+htmls\p_onnewpage.htm
+htmls\p_pagelenght.htm
+htmls\p_pageno.htm
+htmls\p_paperlenght.htm
+htmls\p_printformat.htm
+htmls\p_printjobname.htm
+htmls\p_startconfstring.htm
+htmls\p_topmargin.htm
+htmls\u_archivosfmt.htm
+htmls\u_configsection.htm
+htmls\u_detailsection.htm
+htmls\u_footersection.htm
+htmls\u_groupssection.htm
+htmls\u_headersection.htm
+htmls\u_macrossection.htm
+htmls\u_summarysection.htm
+htmls\p_ejectbeforesummary.htm
+htmls\p_sectionbeginmark.htm
+htmls\p_sectionendmark.htm
+htmls\p_printheaderonsummary.htm
