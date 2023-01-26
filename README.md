@@ -68,7 +68,7 @@ Before proceed with the next step, lets take a closer look of this format file. 
 
 **format:** define the layout of the report.
 
-Everything enclosed with '[ ](-)' or '% %' delimiters are **expandible expressions**. This expressions will be evaluated and the result inserted in the text in the same position of the expanded expression. Finally, any line starting with **#** will be considered as a comment and will not be sent to the final report, as well as any empty line or text that is not enclosed inside a section.
+Everything enclosed with brackets or '%' delimiters are **expandible expressions**. This expressions will be evaluated and the result inserted in the text in the same position of the expanded expression. Finally, any line starting with **#** will be considered as a comment and will not be sent to the final report, as well as any empty line or text that is not enclosed inside a section.
 
 Now, we are ready to generate our text report. All we need now is a data set and an instance of VFPDOSPrint class:
 
